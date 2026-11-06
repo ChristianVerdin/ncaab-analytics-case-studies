@@ -1,0 +1,9 @@
+data/
+*.db
+*.sqlite
+.env
+.Rhistory
+.RData
+.DS_Store
+__pycache__/
+*.pyc
