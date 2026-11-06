@@ -1,0 +1,4 @@
+rule,weeks_fired,first_week_start,monitored_weeks
+A1_gap_threshold,8,2025-11-10,20
+A2_gap_significant,17,2025-11-24,20
+A3_calibration,13,2025-11-10,20

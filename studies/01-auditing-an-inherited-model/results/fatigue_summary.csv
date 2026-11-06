@@ -1,0 +1,2 @@
+games,seasons,games_with_penalty,games_with_penalty_2025_26,conf_tournament_games_2025_26,penalty_coefficient,penalty_coefficient_se,brier_none,brier_intended,brier_as_applied,brier_as_applied_minus_none,lo,hi
+1189,2023-2026,169,52,300,-1.2768357325981223,0.7609839927091359,0.19685898336919172,0.197090571382965,0.19700992226327255,1.5093889408083103e-4,-6.038937233626658e-4,8.741491181231408e-4

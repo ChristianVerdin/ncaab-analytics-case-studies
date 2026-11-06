@@ -1,0 +1,14 @@
+id,group,label
+launchd,Scheduling,launchd (Mac) / 06:30 CT full run / 16:30 CT line refresh
+config,Configuration,"config/season.yml / season, phases, dates / (read by R, Python, shell)"
+espn,Sources,ESPN via hoopR
+kenpom,Sources,KenPom API + FanMatch
+bart,Sources,Barttorvik (free)
+market,Sources,Market lines API (capped)
+runner,Pipeline,"daily_update.sh /  / 1 import (core) / 2 grade yesterday / 3 review / 4 KenPom (core) / 5 Barttorvik / 6 market lines / 7 predict v2.2 (core) / 8 record (core) / 9 accuracy / 10 slate (core) / 11 phase steps / 12 vault notes / 13 mappings, backup"
+db,Storage,"SQLite database / predictions, grades, / ratings, lines"
+backup,Storage,Local snapshots / (14 kept; off-machine / copy still open)
+outputs,Outputs,"Daily slate (markdown) / CSVs, scoreboard / Obsidian note"
+logs,Health,"logs/<date>/<step>.log / RESULT line, exit codes"
+health,Health,"Checks a person runs / quick_lookup status: missed or / failed runs, ungraded games / smoke_test.sh (reads logs + DB)"
+user,Outputs,cv reads the slate / (no alerts are sent)
