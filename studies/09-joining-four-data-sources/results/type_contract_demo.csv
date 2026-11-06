@@ -1,0 +1,5 @@
+id_value,r_class,sqlite_sees,rows_matched
+read_csv() default guess,numeric,145.0,0
+explicit col_character(),character,145,1
+R integer 145L,integer,145,1
+R double 145,numeric,145.0,0

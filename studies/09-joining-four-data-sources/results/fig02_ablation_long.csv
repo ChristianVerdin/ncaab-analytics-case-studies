@@ -1,0 +1,49 @@
+universe,variant,outcome,names
+KenPom 2026-27,Production (all steps),Unresolved (logged; team skipped),0
+KenPom 2026-27,Production (all steps),Wrong: collision guard stops the run,0
+KenPom 2026-27,Production (all steps),Wrong: only a D1 check would catch it (not built),0
+KenPom 2026-27,Production (all steps),Wrong: no check catches it,0
+KenPom 2026-27,Last season's manual rows,Unresolved (logged; team skipped),1
+KenPom 2026-27,Last season's manual rows,Wrong: collision guard stops the run,4
+KenPom 2026-27,Last season's manual rows,Wrong: only a D1 check would catch it (not built),1
+KenPom 2026-27,Last season's manual rows,Wrong: no check catches it,0
+KenPom 2026-27,No manual rows,Unresolved (logged; team skipped),76
+KenPom 2026-27,No manual rows,Wrong: collision guard stops the run,0
+KenPom 2026-27,No manual rows,Wrong: only a D1 check would catch it (not built),0
+KenPom 2026-27,No manual rows,Wrong: no check catches it,1
+KenPom 2026-27,"No manual rows, no code fixes",Unresolved (logged; team skipped),77
+KenPom 2026-27,"No manual rows, no code fixes",Wrong: collision guard stops the run,1
+KenPom 2026-27,"No manual rows, no code fixes",Wrong: only a D1 check would catch it (not built),0
+KenPom 2026-27,"No manual rows, no code fixes",Wrong: no check catches it,1
+KenPom 2026-27,Fuzzy steps off,Unresolved (logged; team skipped),44
+KenPom 2026-27,Fuzzy steps off,Wrong: collision guard stops the run,0
+KenPom 2026-27,Fuzzy steps off,Wrong: only a D1 check would catch it (not built),0
+KenPom 2026-27,Fuzzy steps off,Wrong: no check catches it,0
+KenPom 2026-27,Exact ESPN name only,Unresolved (logged; team skipped),126
+KenPom 2026-27,Exact ESPN name only,Wrong: collision guard stops the run,0
+KenPom 2026-27,Exact ESPN name only,Wrong: only a D1 check would catch it (not built),0
+KenPom 2026-27,Exact ESPN name only,Wrong: no check catches it,0
+KenPom 2025-26,Production (all steps),Unresolved (logged; team skipped),0
+KenPom 2025-26,Production (all steps),Wrong: collision guard stops the run,0
+KenPom 2025-26,Production (all steps),Wrong: only a D1 check would catch it (not built),0
+KenPom 2025-26,Production (all steps),Wrong: no check catches it,0
+KenPom 2025-26,Last season's manual rows,Unresolved (logged; team skipped),0
+KenPom 2025-26,Last season's manual rows,Wrong: collision guard stops the run,4
+KenPom 2025-26,Last season's manual rows,Wrong: only a D1 check would catch it (not built),2
+KenPom 2025-26,Last season's manual rows,Wrong: no check catches it,0
+KenPom 2025-26,No manual rows,Unresolved (logged; team skipped),75
+KenPom 2025-26,No manual rows,Wrong: collision guard stops the run,0
+KenPom 2025-26,No manual rows,Wrong: only a D1 check would catch it (not built),1
+KenPom 2025-26,No manual rows,Wrong: no check catches it,1
+KenPom 2025-26,"No manual rows, no code fixes",Unresolved (logged; team skipped),76
+KenPom 2025-26,"No manual rows, no code fixes",Wrong: collision guard stops the run,1
+KenPom 2025-26,"No manual rows, no code fixes",Wrong: only a D1 check would catch it (not built),1
+KenPom 2025-26,"No manual rows, no code fixes",Wrong: no check catches it,1
+KenPom 2025-26,Fuzzy steps off,Unresolved (logged; team skipped),45
+KenPom 2025-26,Fuzzy steps off,Wrong: collision guard stops the run,0
+KenPom 2025-26,Fuzzy steps off,Wrong: only a D1 check would catch it (not built),0
+KenPom 2025-26,Fuzzy steps off,Wrong: no check catches it,0
+KenPom 2025-26,Exact ESPN name only,Unresolved (logged; team skipped),126
+KenPom 2025-26,Exact ESPN name only,Wrong: collision guard stops the run,0
+KenPom 2025-26,Exact ESPN name only,Wrong: only a D1 check would catch it (not built),0
+KenPom 2025-26,Exact ESPN name only,Wrong: no check catches it,0
