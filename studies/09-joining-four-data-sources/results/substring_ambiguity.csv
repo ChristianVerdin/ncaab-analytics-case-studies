@@ -1,0 +1,133 @@
+universe,source_name,candidate_teams,resolved_correctly
+KenPom 2026-27,Pittsburgh,1,True
+KenPom 2026-27,George Washington,1,True
+KenPom 2026-27,UC Santa Barbara,1,True
+KenPom 2026-27,Seattle,2,True
+KenPom 2026-27,Western Kentucky,1,True
+KenPom 2026-27,Florida Atlantic,1,True
+KenPom 2026-27,Massachusetts,1,True
+KenPom 2026-27,Eastern Washington,1,True
+KenPom 2026-27,Central Arkansas,1,True
+KenPom 2026-27,Stephen F. Austin,1,True
+KenPom 2026-27,Loyola Marymount,1,True
+KenPom 2026-27,Southern Illinois,1,True
+KenPom 2026-27,Middle Tennessee,1,True
+KenPom 2026-27,Western Carolina,1,True
+KenPom 2026-27,Eastern Michigan,1,True
+KenPom 2026-27,Northern Kentucky,1,True
+KenPom 2026-27,Northern Colorado,1,True
+KenPom 2026-27,Western Michigan,1,True
+KenPom 2026-27,Houston Christian,1,True
+KenPom 2026-27,Florida Gulf Coast,1,True
+KenPom 2026-27,Abilene Christian,1,True
+KenPom 2026-27,UT Rio Grande Valley,1,True
+KenPom 2026-27,Coastal Carolina,1,True
+KenPom 2026-27,Georgia Southern,2,True
+KenPom 2026-27,Purdue Fort Wayne,1,True
+KenPom 2026-27,Southeast Missouri,1,True
+KenPom 2026-27,Central Michigan,1,True
+KenPom 2026-27,Eastern Kentucky,1,True
+KenPom 2026-27,Northern Arizona,1,True
+KenPom 2026-27,LSU New Orleans,1,True
+KenPom 2026-27,Northern Illinois,1,True
+KenPom 2026-27,Boston University,1,True
+KenPom 2026-27,Mount St. Mary's,1,True
+KenPom 2026-27,North Carolina A&T,1,True
+KenPom 2026-27,Prairie View A&M,1,True
+KenPom 2026-27,Charleston Southern,1,True
+KenPom 2026-27,Southern Indiana,1,True
+KenPom 2026-27,Central Connecticut,1,True
+KenPom 2026-27,Albany,2,True
+KenPom 2026-27,Fairleigh Dickinson,1,True
+KenPom 2026-27,North Carolina Central,1,True
+KenPom 2026-27,Maryland Eastern Shore,1,True
+KenPom 2026-27,Eastern Illinois,1,True
+KenPom 2026-27,Western Illinois,1,True
+Barttorvik 2026-27,George Washington,1,True
+Barttorvik 2026-27,Pittsburgh,1,True
+Barttorvik 2026-27,UC Santa Barbara,1,True
+Barttorvik 2026-27,Western Kentucky,1,True
+Barttorvik 2026-27,Florida Atlantic,1,True
+Barttorvik 2026-27,Stephen F. Austin,1,True
+Barttorvik 2026-27,Seattle,2,True
+Barttorvik 2026-27,Loyola Marymount,1,True
+Barttorvik 2026-27,Middle Tennessee,1,True
+Barttorvik 2026-27,Central Arkansas,1,True
+Barttorvik 2026-27,Eastern Michigan,1,True
+Barttorvik 2026-27,Western Michigan,1,True
+Barttorvik 2026-27,Western Carolina,1,True
+Barttorvik 2026-27,Massachusetts,1,True
+Barttorvik 2026-27,Eastern Washington,1,True
+Barttorvik 2026-27,Southern Illinois,1,True
+Barttorvik 2026-27,Northern Colorado,1,True
+Barttorvik 2026-27,Northern Kentucky,1,True
+Barttorvik 2026-27,Coastal Carolina,1,True
+Barttorvik 2026-27,New Orleans,3,True
+Barttorvik 2026-27,Central Michigan,1,True
+Barttorvik 2026-27,UT Rio Grande Valley,1,True
+Barttorvik 2026-27,Northern Illinois,1,True
+Barttorvik 2026-27,Florida Gulf Coast,1,True
+Barttorvik 2026-27,North Carolina A&T,1,True
+Barttorvik 2026-27,Houston Christian,1,True
+Barttorvik 2026-27,Prairie View A&M,1,True
+Barttorvik 2026-27,Purdue Fort Wayne,1,True
+Barttorvik 2026-27,Eastern Kentucky,1,True
+Barttorvik 2026-27,Boston University,1,True
+Barttorvik 2026-27,Albany,2,True
+Barttorvik 2026-27,Mount St. Mary's,1,True
+Barttorvik 2026-27,Abilene Christian,1,True
+Barttorvik 2026-27,Northern Arizona,1,True
+Barttorvik 2026-27,Southern Indiana,1,True
+Barttorvik 2026-27,Charleston Southern,1,True
+Barttorvik 2026-27,Georgia Southern,2,True
+Barttorvik 2026-27,Eastern Illinois,1,True
+Barttorvik 2026-27,Central Connecticut,1,True
+Barttorvik 2026-27,Fairleigh Dickinson,1,True
+Barttorvik 2026-27,North Carolina Central,1,True
+Barttorvik 2026-27,Western Illinois,1,True
+Barttorvik 2026-27,Maryland Eastern Shore,1,True
+KenPom 2025-26,Abilene Christian,1,True
+KenPom 2025-26,Albany,2,True
+KenPom 2025-26,Boston University,1,True
+KenPom 2025-26,Central Arkansas,1,True
+KenPom 2025-26,Central Connecticut,1,True
+KenPom 2025-26,Central Michigan,1,True
+KenPom 2025-26,Charleston Southern,1,True
+KenPom 2025-26,Coastal Carolina,1,True
+KenPom 2025-26,East Texas A&M,1,True
+KenPom 2025-26,Eastern Illinois,1,True
+KenPom 2025-26,Eastern Kentucky,1,True
+KenPom 2025-26,Eastern Michigan,1,True
+KenPom 2025-26,Eastern Washington,1,True
+KenPom 2025-26,Fairleigh Dickinson,1,True
+KenPom 2025-26,Florida Atlantic,1,True
+KenPom 2025-26,Florida Gulf Coast,1,True
+KenPom 2025-26,George Washington,1,True
+KenPom 2025-26,Georgia Southern,1,True
+KenPom 2025-26,Houston Christian,1,True
+KenPom 2025-26,Loyola Marymount,1,True
+KenPom 2025-26,Maryland Eastern Shore,1,True
+KenPom 2025-26,Massachusetts,2,True
+KenPom 2025-26,Middle Tennessee,1,True
+KenPom 2025-26,Mount St. Mary's,1,True
+KenPom 2025-26,North Carolina A&T,1,True
+KenPom 2025-26,North Carolina Central,1,True
+KenPom 2025-26,Northern Arizona,1,True
+KenPom 2025-26,Northern Colorado,1,True
+KenPom 2025-26,Northern Illinois,1,True
+KenPom 2025-26,Northern Kentucky,1,True
+KenPom 2025-26,Pittsburgh,2,True
+KenPom 2025-26,Prairie View A&M,1,True
+KenPom 2025-26,Purdue Fort Wayne,1,True
+KenPom 2025-26,Seattle,1,True
+KenPom 2025-26,Southeast Missouri,1,True
+KenPom 2025-26,Southern Illinois,1,True
+KenPom 2025-26,Southern Indiana,1,True
+KenPom 2025-26,St. Thomas,2,True
+KenPom 2025-26,Stephen F. Austin,1,True
+KenPom 2025-26,UC Santa Barbara,1,True
+KenPom 2025-26,UT Rio Grande Valley,1,True
+KenPom 2025-26,Western Carolina,1,True
+KenPom 2025-26,Western Illinois,1,True
+KenPom 2025-26,Western Kentucky,1,True
+KenPom 2025-26,Western Michigan,1,True

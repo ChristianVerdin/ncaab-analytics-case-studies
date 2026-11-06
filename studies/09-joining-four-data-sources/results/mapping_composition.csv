@@ -1,0 +1,5 @@
+source,method,rows_2026_27,rows_2025_26
+Market feed,EXACT,284,284
+Market feed,FUZZY,59,60
+Market feed,MANUAL,8,4
+"Ratings sites (KenPom, Barttorvik)",kenpom_manual,82,75

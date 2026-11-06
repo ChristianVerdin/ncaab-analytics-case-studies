@@ -1,0 +1,28 @@
+universe,variant,source_name,resolved_to,correct_team,first_guard_to_catch
+KenPom 2026-27,last_season_rows,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,collision guard
+KenPom 2026-27,last_season_rows,Montana St.,Montana Grizzlies,Montana State Bobcats,collision guard
+KenPom 2026-27,last_season_rows,East Tennessee St.,East Carolina Pirates,East Tennessee State Buccaneers,collision guard
+KenPom 2026-27,last_season_rows,Sacramento St.,Regis College Pride,Sacramento State Hornets,D1 check
+KenPom 2026-27,last_season_rows,Cal Baptist,UNC Wilmington Seahawks,California Baptist Lancers,collision guard
+KenPom 2026-27,no_manual,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing
+KenPom 2026-27,no_manual_no_fixes,Connecticut,Central Connecticut Blue Devils,UConn Huskies,collision guard
+KenPom 2026-27,no_manual_no_fixes,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing
+Barttorvik 2026-27,last_season_rows,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,collision guard
+Barttorvik 2026-27,last_season_rows,Montana St.,Montana Grizzlies,Montana State Bobcats,collision guard
+Barttorvik 2026-27,last_season_rows,Sacramento St.,Regis College Pride,Sacramento State Hornets,D1 check
+Barttorvik 2026-27,last_season_rows,East Tennessee St.,East Carolina Pirates,East Tennessee State Buccaneers,collision guard
+Barttorvik 2026-27,last_season_rows,Cal Baptist,UNC Wilmington Seahawks,California Baptist Lancers,collision guard
+Barttorvik 2026-27,no_manual,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing
+Barttorvik 2026-27,no_manual_no_fixes,Connecticut,Central Connecticut Blue Devils,UConn Huskies,collision guard
+Barttorvik 2026-27,no_manual_no_fixes,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing
+KenPom 2025-26,last_season_rows,Cal Baptist,UNC Wilmington Seahawks,California Baptist Lancers,collision guard
+KenPom 2025-26,last_season_rows,East Tennessee St.,East Carolina Pirates,East Tennessee State Buccaneers,collision guard
+KenPom 2025-26,last_season_rows,Hawaii,Hawai'i Pacific Sea Warriors,Hawai'i Rainbow Warriors,D1 check
+KenPom 2025-26,last_season_rows,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,collision guard
+KenPom 2025-26,last_season_rows,Montana St.,Montana Grizzlies,Montana State Bobcats,collision guard
+KenPom 2025-26,last_season_rows,Sacramento St.,Regis Pride,Sacramento State Hornets,D1 check
+KenPom 2025-26,no_manual,Hawaii,Hawai'i Pacific Sea Warriors,Hawai'i Rainbow Warriors,D1 check
+KenPom 2025-26,no_manual,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing
+KenPom 2025-26,no_manual_no_fixes,Connecticut,Central Connecticut Blue Devils,UConn Huskies,collision guard
+KenPom 2025-26,no_manual_no_fixes,Hawaii,Hawai'i Pacific Sea Warriors,Hawai'i Rainbow Warriors,D1 check
+KenPom 2025-26,no_manual_no_fixes,Mississippi,Mississippi State Bulldogs,Ole Miss Rebels,nothing

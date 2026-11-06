@@ -1,0 +1,19 @@
+universe,variant,variant_label,names,correct,wrong,unresolved,names_in_collisions,wrong_caught_by_collision,wrong_caught_by_d1,wrong_caught_by_conference,wrong_silent
+KenPom 2026-27,production,"Production: manual rows, fixes, exact, fuzzy",365,365,0,0,0,0,0,0,0
+KenPom 2026-27,last_season_rows,Same code with last season's manual rows,365,359,5,1,8,4,1,0,0
+KenPom 2026-27,no_manual,No manual rows,365,288,1,76,0,0,0,0,1
+KenPom 2026-27,no_manual_no_fixes,No manual rows and no hardcoded fixes,365,286,2,77,2,1,0,0,1
+KenPom 2026-27,fuzzy_off,"Manual rows, fixes and exact only (fuzzy off)",365,321,0,44,0,0,0,0,0
+KenPom 2026-27,exact_only,Exact ESPN name only,365,239,0,126,0,0,0,0,0
+Barttorvik 2026-27,production,"Production: manual rows, fixes, exact, fuzzy",365,365,0,0,0,0,0,0,0
+Barttorvik 2026-27,last_season_rows,Same code with last season's manual rows,365,354,5,6,8,4,1,0,0
+Barttorvik 2026-27,no_manual,No manual rows,365,284,1,80,0,0,0,0,1
+Barttorvik 2026-27,no_manual_no_fixes,No manual rows and no hardcoded fixes,365,282,2,81,2,1,0,0,1
+Barttorvik 2026-27,fuzzy_off,"Manual rows, fixes and exact only (fuzzy off)",365,322,0,43,0,0,0,0,0
+Barttorvik 2026-27,exact_only,Exact ESPN name only,365,235,0,130,0,0,0,0,0
+KenPom 2025-26,production,"Production: manual rows, fixes, exact, fuzzy",365,365,0,0,0,0,0,0,0
+KenPom 2025-26,last_season_rows,Same code with last season's manual rows,365,359,6,0,8,4,2,0,0
+KenPom 2025-26,no_manual,No manual rows,365,288,2,75,0,0,1,0,1
+KenPom 2025-26,no_manual_no_fixes,No manual rows and no hardcoded fixes,365,286,3,76,2,1,1,0,1
+KenPom 2025-26,fuzzy_off,"Manual rows, fixes and exact only (fuzzy off)",365,320,0,45,0,0,0,0,0
+KenPom 2025-26,exact_only,Exact ESPN name only,365,239,0,126,0,0,0,0,0
