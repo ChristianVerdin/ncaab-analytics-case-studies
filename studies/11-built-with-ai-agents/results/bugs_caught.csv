@@ -1,0 +1,27 @@
+session,caught_by,bug
+1. Season rebuild,Worker agent,Market consensus skipped on any run after 6 PM: a UTC date compared with local time
+1. Season rebuild,Worker agent,The fetch step printed the first and last 4 characters of the API key
+1. Season rebuild,Worker agent,"A 200-credit daily budget could not fit the 1,500-credit monthly plan"
+1. Season rebuild,Worker agent,Bracket import's ESPN game-id lookup always errored (0 of 32 matched in 2025-26)
+1. Season rebuild,Worker agent,Bracket update never moved play-in winners into the First Round
+1. Season rebuild,Worker agent,All four 2026 First Four rows named the wrong winner
+1. Season rebuild,Worker agent,Final Four pairing hardcoded; wrong for 2026
+1. Season rebuild,Worker agent,Tournament report counted 8 NIT games as NCAA games
+1. Season rebuild,Worker agent,Tournament report read the predicted winner's probability as the home team's
+1. Season rebuild,Worker agent,Conference-history script crashed on hoopR 2.x and overwrote rows on re-import
+1. Season rebuild,Worker agent,Hardcoded league defense average (109.3 vs 104.8) pulled projections about 4% low
+1. Season rebuild,Worker agent,Pre-2026 seed history had errors (a 16-seed win missing); lead rebuilt it from ESPN
+1. Season rebuild,Worker agent,"Backtest hardcoded last season, so the documented refit could not run"
+1. Season rebuild,Worker agent,Three different game counts quoted for the same backtest
+1. Season rebuild,Automated security review,API key could reach logs through error messages (fixed in under a minute)
+1. Season rebuild,Lead agent,"Matched-vs-stored count gap: 4 wrong team-id mappings, 2 teams missing (study 09)"
+1. Season rebuild,Lead agent,Teams import failed on an integer-vs-text conference id
+1. Season rebuild,Lead agent,Old KenPom API path returned 404; client moved to the new scheme and fails loudly
+1. Season rebuild,Lead agent,Old calibration table skipped home probabilities below 50%
+1. Season rebuild,Lead agent,Environment script pointed at the wrong folder under zsh
+1. Season rebuild,Lead agent,Vault step logged a data sync that never happened
+1. Season rebuild,Lead agent,Manual security review: SQL date filter used a table alias that did not exist
+1. Season rebuild,Lead agent,Manual security review: health check passed keys on the command line
+2. Portfolio build,Lead agent,Conference-tournament fatigue adjustment had its sign reversed
+2. Portfolio build,Lead agent,Two March reports read ids as numbers and matched nothing (study 09)
+2. Portfolio build,Lead agent,Neutral-site rule missed 32 of 300 conference-tournament games (study 09)

@@ -1,0 +1,25 @@
+start_ct,kind,files_reviewed,findings,outcome
+2026-11-05T16:13:03,review,1,0,no findings
+2026-11-05T16:15:18,review,2,0,no findings
+2026-11-05T19:03:36,review,1,0,no findings
+2026-11-05T19:10:41,review,5,0,no findings
+2026-11-05T18:43:48,review,9,0,no findings
+2026-11-05T16:04:31,review,12,2,2 finding(s)
+2026-11-05T17:02:09,review,2,0,no findings
+2026-11-05T17:17:04,review,6,0,no findings
+2026-11-05T17:07:46,review,1,0,no findings
+2026-11-05T16:09:58,review,1,0,no findings
+2026-11-05T19:20:25,review,1,0,no findings
+2026-11-05T19:16:17,review,6,0,no findings
+2026-11-05T16:06:34,review,12,0,no findings
+2026-11-05T16:58:49,review,1,0,no findings
+2026-11-05T16:13:20,review,1,0,no findings
+2026-11-05T16:05:16,verification pass,0,1,"1 kept, 1 refuted"
+2026-11-05T16:04:58,review,12,0,no findings
+2026-11-05T17:03:38,review,1,0,no findings
+2026-11-05T18:59:01,review,7,0,did not complete (sign-in rejected)
+2026-11-05T16:50:42,review,7,0,no findings
+2026-11-05T16:31:17,review,1,0,no findings
+2026-11-05T16:57:09,review,4,0,no findings
+2026-11-05T19:13:00,review,2,0,no findings
+2026-11-05T16:59:23,review,2,0,no findings

@@ -1,0 +1,14 @@
+session,agent,kind,task,brief_chars,start_ct,end_ct,minutes,tool_calls,bash_calls,edit_write_calls,web_calls,git_commits_by_agent,git_pushes_by_agent,messages_to_lead
+1. Season rebuild,Audit season-hardcoded values,Explore (read-only),Audit season-hardcoded values,2202,2026-11-05T15:22:04,2026-11-05T15:28:55,7,75,58,0,2,0,0,0
+1. Season rebuild,"Map pipeline, data flow, deps",Explore (read-only),"Map pipeline, data flow, deps",3987,2026-11-05T15:22:20,2026-11-05T15:33:49,11,68,47,0,0,0,0,0
+1. Season rebuild,Early-season model readiness,Explore (read-only),Early-season model readiness,3265,2026-11-05T15:22:34,2026-11-05T15:33:59,11,73,53,0,0,0,0,0
+1. Season rebuild,docs-agent,teammate,Docs and skills refresh,4438,2026-11-05T17:04:26,2026-11-05T17:15:33,11,98,61,25,0,0,0,1
+1. Season rebuild,march-agent,teammate,March readiness + props,5329,2026-11-05T16:46:44,2026-11-05T17:22:29,36,153,132,12,8,0,0,1
+1. Season rebuild,odds-agent,teammate,Odds: neutral fix + sportskit,4741,2026-11-05T16:46:24,2026-11-05T17:03:31,17,58,43,13,0,0,0,2
+2. Portfolio build,ask,teammate,Ask-the-season MCP + LLM eval study 12,3868,2026-11-05T20:16:16,2026-11-05T21:13:30,57,147,66,27,1,0,0,1
+2. Portfolio build,eng,teammate,Engineering studies 09 and 11,3665,2026-11-05T20:16:01,2026-11-05T20:43:46,28,119,91,8,0,0,0,1
+2. Portfolio build,forecast,teammate,"Forecasting studies 01, 02, 10",4431,2026-11-05T20:14:55,2026-11-05T20:39:59,25,111,73,12,0,0,0,1
+2. Portfolio build,hca,teammate,"Home court and luck studies 04, 08",2794,2026-11-05T20:15:22,2026-11-05T20:55:10,40,103,50,14,13,0,0,1
+2. Portfolio build,march,teammate,March studies 05 and 06,3409,2026-11-05T20:15:35,2026-11-05T20:38:08,23,77,45,8,0,0,0,1
+2. Portfolio build,roster,teammate,Roster continuity study 03,2513,2026-11-05T20:15:08,2026-11-05T20:33:23,18,48,27,2,0,0,0,1
+2. Portfolio build,style,teammate,Team archetypes study 07,2423,2026-11-05T20:15:43,2026-11-05T20:35:04,19,46,26,2,0,0,0,1

@@ -1,0 +1,108 @@
+session,row,kind,start,end
+1. Season rebuild,Lead agent,working,2026-11-05T15:19:42,2026-11-05T15:24:40
+1. Season rebuild,Lead agent,working,2026-11-05T15:38:33,2026-11-05T15:40:16
+1. Season rebuild,Lead agent,working,2026-11-05T16:03:49,2026-11-05T16:17:08
+1. Season rebuild,Lead agent,working,2026-11-05T16:23:49,2026-11-05T16:31:32
+1. Season rebuild,Lead agent,working,2026-11-05T16:46:02,2026-11-05T17:07:52
+1. Season rebuild,Lead agent,working,2026-11-05T17:15:43,2026-11-05T17:26:29
+1. Season rebuild,Lead agent,working,2026-11-05T18:41:30,2026-11-05T19:21:05
+1. Season rebuild,cv (human),message,2026-11-05T15:19:08,2026-11-05T15:19:08
+1. Season rebuild,cv (human),message,2026-11-05T16:23:37,2026-11-05T16:23:37
+1. Season rebuild,cv (human),message,2026-11-05T16:28:12,2026-11-05T16:28:12
+1. Season rebuild,cv (human),message,2026-11-05T16:43:43,2026-11-05T16:43:43
+1. Season rebuild,cv (human),message,2026-11-05T18:41:22,2026-11-05T18:41:22
+1. Season rebuild,cv (human),message,2026-11-05T18:45:14,2026-11-05T18:45:14
+1. Season rebuild,cv (human),message,2026-11-05T18:59:49,2026-11-05T18:59:49
+1. Season rebuild,cv (human),message,2026-11-05T19:13:19,2026-11-05T19:13:19
+1. Season rebuild,Audit season-hardcoded values,working,2026-11-05T15:22:04,2026-11-05T15:28:55
+1. Season rebuild,"Map pipeline, data flow, deps",working,2026-11-05T15:22:20,2026-11-05T15:33:49
+1. Season rebuild,Early-season model readiness,working,2026-11-05T15:22:34,2026-11-05T15:33:59
+1. Season rebuild,docs-agent,working,2026-11-05T17:04:26,2026-11-05T17:15:33
+1. Season rebuild,march-agent,working,2026-11-05T16:46:44,2026-11-05T17:22:29
+1. Season rebuild,odds-agent,working,2026-11-05T16:46:24,2026-11-05T17:03:31
+2. Portfolio build,Lead agent,working,2026-11-05T19:24:01,2026-11-05T20:20:52
+2. Portfolio build,Lead agent,working,2026-11-05T20:33:16,2026-11-05T20:44:58
+2. Portfolio build,Lead agent,working,2026-11-05T20:55:03,2026-11-05T21:01:06
+2. Portfolio build,Lead agent,working,2026-11-05T21:13:22,2026-11-05T21:13:36
+2. Portfolio build,cv (human),message,2026-11-05T19:23:57,2026-11-05T19:23:57
+2. Portfolio build,cv (human),message,2026-11-05T19:45:25,2026-11-05T19:45:25
+2. Portfolio build,cv (human),message,2026-11-05T19:47:48,2026-11-05T19:47:48
+2. Portfolio build,cv (human),message,2026-11-05T19:53:31,2026-11-05T19:53:31
+2. Portfolio build,cv (human),message,2026-11-05T19:55:56,2026-11-05T19:55:56
+2. Portfolio build,cv (human),message,2026-11-05T20:01:29,2026-11-05T20:01:29
+2. Portfolio build,cv (human),message,2026-11-05T20:02:29,2026-11-05T20:02:29
+2. Portfolio build,cv (human),message,2026-11-05T20:04:23,2026-11-05T20:04:23
+2. Portfolio build,cv (human),message,2026-11-05T20:40:31,2026-11-05T20:40:31
+2. Portfolio build,cv (human),message,2026-11-05T21:00:06,2026-11-05T21:00:06
+2. Portfolio build,ask,working,2026-11-05T20:16:16,2026-11-05T21:13:30
+2. Portfolio build,eng,working,2026-11-05T20:16:01,2026-11-05T20:43:46
+2. Portfolio build,forecast,working,2026-11-05T20:14:55,2026-11-05T20:39:59
+2. Portfolio build,hca,working,2026-11-05T20:15:22,2026-11-05T20:55:10
+2. Portfolio build,march,working,2026-11-05T20:15:35,2026-11-05T20:38:08
+2. Portfolio build,roster,working,2026-11-05T20:15:08,2026-11-05T20:33:23
+2. Portfolio build,style,working,2026-11-05T20:15:43,2026-11-05T20:35:04
+1. Season rebuild,Security review (per push),review,2026-11-05T16:13:03,2026-11-05T16:13:03
+1. Season rebuild,Security review (per push),review,2026-11-05T16:15:18,2026-11-05T16:15:18
+1. Season rebuild,Security review (per push),review,2026-11-05T19:03:36,2026-11-05T19:03:36
+1. Season rebuild,Security review (per push),review,2026-11-05T19:10:41,2026-11-05T19:10:41
+1. Season rebuild,Security review (per push),review,2026-11-05T18:43:48,2026-11-05T18:43:48
+1. Season rebuild,Security review (per push),review,2026-11-05T16:04:31,2026-11-05T16:04:31
+1. Season rebuild,Security review (per push),review,2026-11-05T17:02:09,2026-11-05T17:02:09
+1. Season rebuild,Security review (per push),review,2026-11-05T17:17:04,2026-11-05T17:17:04
+1. Season rebuild,Security review (per push),review,2026-11-05T17:07:46,2026-11-05T17:07:46
+1. Season rebuild,Security review (per push),review,2026-11-05T16:09:58,2026-11-05T16:09:58
+1. Season rebuild,Security review (per push),review,2026-11-05T19:20:25,2026-11-05T19:20:25
+1. Season rebuild,Security review (per push),review,2026-11-05T19:16:17,2026-11-05T19:16:17
+1. Season rebuild,Security review (per push),review,2026-11-05T16:06:34,2026-11-05T16:06:34
+1. Season rebuild,Security review (per push),review,2026-11-05T16:58:49,2026-11-05T16:58:49
+1. Season rebuild,Security review (per push),review,2026-11-05T16:13:20,2026-11-05T16:13:20
+1. Season rebuild,Security review (per push),verification pass,2026-11-05T16:05:16,2026-11-05T16:05:16
+1. Season rebuild,Security review (per push),review,2026-11-05T16:04:58,2026-11-05T16:04:58
+1. Season rebuild,Security review (per push),review,2026-11-05T17:03:38,2026-11-05T17:03:38
+1. Season rebuild,Security review (per push),review,2026-11-05T18:59:01,2026-11-05T18:59:01
+1. Season rebuild,Security review (per push),review,2026-11-05T16:50:42,2026-11-05T16:50:42
+1. Season rebuild,Security review (per push),review,2026-11-05T16:31:17,2026-11-05T16:31:17
+1. Season rebuild,Security review (per push),review,2026-11-05T16:57:09,2026-11-05T16:57:09
+1. Season rebuild,Security review (per push),review,2026-11-05T19:13:00,2026-11-05T19:13:00
+1. Season rebuild,Security review (per push),review,2026-11-05T16:59:23,2026-11-05T16:59:23
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:44:23,2026-11-05T20:44:23
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:38:34,2026-11-05T20:38:34
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:19:26,2026-11-05T20:19:26
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:07:50,2026-11-05T20:07:50
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T19:53:00,2026-11-05T19:53:00
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T19:42:53,2026-11-05T19:42:53
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T19:20:23,2026-11-05T19:20:23
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T19:16:15,2026-11-05T19:16:15
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T19:12:58,2026-11-05T19:12:58
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T19:10:39,2026-11-05T19:10:39
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T19:03:34,2026-11-05T19:03:34
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T18:58:59,2026-11-05T18:58:59
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T18:43:46,2026-11-05T18:43:46
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:24:00,2026-11-05T17:24:00
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:17:10,2026-11-05T17:17:10
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:17:02,2026-11-05T17:17:02
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:07:44,2026-11-05T17:07:44
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:06:35,2026-11-05T17:06:35
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:03:37,2026-11-05T17:03:37
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T17:02:09,2026-11-05T17:02:09
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:59:23,2026-11-05T16:59:23
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:58:48,2026-11-05T16:58:48
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:57:08,2026-11-05T16:57:08
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:50:41,2026-11-05T16:50:41
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:31:15,2026-11-05T16:31:15
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:16:05,2026-11-05T16:16:05
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:15:16,2026-11-05T16:15:16
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:13:19,2026-11-05T16:13:19
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:13:02,2026-11-05T16:13:02
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:09:57,2026-11-05T16:09:57
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:06:34,2026-11-05T16:06:34
+1. Season rebuild,Git commit (lead only),commit,2026-11-05T16:04:30,2026-11-05T16:04:30
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T21:13:33,2026-11-05T21:13:33
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:55:21,2026-11-05T20:55:21
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:44:54,2026-11-05T20:44:54
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:40:47,2026-11-05T20:40:47
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:38:23,2026-11-05T20:38:23
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:35:06,2026-11-05T20:35:06
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:33:49,2026-11-05T20:33:49
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:20:03,2026-11-05T20:20:03
+2. Portfolio build,Git commit (lead only),commit,2026-11-05T20:13:28,2026-11-05T20:13:28

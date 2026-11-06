@@ -1,0 +1,3 @@
+session,start_ct,end_ct,hours,lead_tool_calls,lead_bash_calls,agents_spawned,human_messages,lead_commit_commands,lead_push_commands,smoke_test_runs,context_compactions,subagent_tool_calls,subagent_commits
+1. Season rebuild,2026-11-05T15:19:42,2026-11-05T19:21:05,4.02,459,408,6,8,29,21,25,1,525,0
+2. Portfolio build,2026-11-05T19:24:01,2026-11-05T21:13:36,1.83,228,178,7,10,15,6,5,0,651,0
