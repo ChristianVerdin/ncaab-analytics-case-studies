@@ -1,0 +1,13 @@
+prompt,failure,n
+Baseline: schema only,name match,14
+"Improved: notes, rules, examples",name match,0
+Baseline: schema only,wrong filter,4
+"Improved: notes, rules, examples",wrong filter,1
+Baseline: schema only,refused: thought the season had not happened,4
+"Improved: notes, rules, examples",refused: thought the season had not happened,0
+Baseline: schema only,sql error,1
+"Improved: notes, rules, examples",sql error,0
+Baseline: schema only,wrong join,1
+"Improved: notes, rules, examples",wrong join,0
+Baseline: schema only,wrong season,1
+"Improved: notes, rules, examples",wrong season,0

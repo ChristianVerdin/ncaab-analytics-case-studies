@@ -1,0 +1,7 @@
+baseline,improved,subset,n_paired,baseline_correct,improved_correct,lost,gained,mcnemar_exact_p,accuracy_gain,gain_ci_low,gain_ci_high
+baseline_dev,improved_v1_dev,all,29,14,27,0,13,0.0002,0.4483,0.2759,0.6207
+baseline_dev,improved_v1_dev,answerable,25,10,23,0,13,0.0002,0.52,0.32,0.72
+baseline_dev,improved_v2_dev,all,29,14,29,0,15,0.0001,0.5172,0.3448,0.6897
+baseline_dev,improved_v2_dev,answerable,25,10,25,0,15,0.0001,0.6,0.4,0.8
+baseline_test,improved_test,all,19,9,18,0,9,0.0039,0.4737,0.2632,0.6842
+baseline_test,improved_test,answerable,16,6,15,0,9,0.0039,0.5625,0.3125,0.8125

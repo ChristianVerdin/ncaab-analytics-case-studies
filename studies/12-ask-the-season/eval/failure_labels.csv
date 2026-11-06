@@ -1,0 +1,28 @@
+run,id,label,note
+baseline_dev,L01,name match,guessed team_id = 'gonzaga'; ids are numeric ESPN ids
+baseline_dev,L04,name match,name = 'Texas' matches nothing; display names end in the mascot
+baseline_dev,L07,wrong season,used season 2020 for 2020-21 (season is the ending year)
+baseline_dev,L08,name match,name = 'Saint Mary''s' exact match on a display name
+baseline_dev,A07,name match,name = 'Kentucky' exact match
+baseline_dev,A09,wrong filter,season_type = 3 also counts NIT and CBI games
+baseline_dev,J01,name match,name = 'Duke' exact match
+baseline_dev,J03,wrong join,joined teams.conference (latest conference) instead of team_seasons for 2023-24; UCLA and USC counted as Big Ten
+baseline_dev,J08,name match,name = 'Kansas' exact match
+baseline_dev,C02,name match,guessed team_id 'alabama' and 'gonzaga'
+baseline_dev,C03,name match,guessed team_ids 'duke' and 'unc'; also used seasons 2019-2025
+baseline_dev,C08,name match,guessed team_ids 'michigan' and 'michigan-state'
+baseline_dev,T04,name match,guessed team_id 'CONN'
+improved_v1_dev,J08,wrong season,used season 2023 for 2023-24
+improved_v1_dev,T04,wrong season,"used season 2023 (2022-23) with a 2024 date cutoff, wrong under either reading of the question"
+baseline_test,L03,name match,guessed team_id = 'houston'
+baseline_test,L06,name match,guessed team_id = 'michigan'
+baseline_test,A04,wrong filter,season_type = 1 does not exist (regular season is 2); result NULL
+baseline_test,A06,wrong filter,season_type = 3 also counts NIT and CBI games (53 extra rows grouped as NULL)
+baseline_test,J04,wrong filter,guessed tourney_round = '1'; the value is '1st Round'
+baseline_test,C01,name match,guessed team_ids 'houston' and 'tennessee'
+baseline_test,C05,name match,guessed team_ids 'kansas' and 'kentucky'
+baseline_dev,J02,refused: thought the season had not happened,said the 2025 season was not yet complete or not in the data
+baseline_dev,J05,refused: thought the season had not happened,said 2025-26 is in the future
+baseline_test,J07,refused: thought the season had not happened,said 2024-25 and 2025-26 are in the future
+baseline_test,T02,refused: thought the season had not happened,said February 2026 is in the future
+improved_test,J06,wrong filter,counted only champions listed as the home team (margin > 0); dropped Baylor (2020-21) and Florida (2024-25)

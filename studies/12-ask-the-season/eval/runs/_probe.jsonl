@@ -1,0 +1,1 @@
+{"run": "_probe", "prompt": "probe", "model": "global.anthropic.claude-haiku-4-5-20251001-v1:0", "id": "probe", "text": "OK", "in": 15, "out": 4, "latency_ms": 704, "note": "connectivity check before the eval, 2026-11-05"}

@@ -1,0 +1,16 @@
+run,split,subset,n,correct,accuracy,ci_low,ci_high,cost_usd,cost_per_question_usd,mean_in_tokens,mean_out_tokens,median_latency_ms,max_latency_ms
+baseline_dev,dev,all,29,14,0.4828,0.3139,0.6557,0.02878,0.000993,574.6,83.6,900,2934
+baseline_dev,dev,answerable,25,10,0.4,0.234,0.5926,0.02514,0.001006,575.1,86.1,852,2934
+baseline_dev,dev,unanswerable,4,4,1.0,0.5101,1.0,0.00364,0.00091,571.5,67.8,1171,1254
+baseline_test,test,all,19,9,0.4737,0.2733,0.6829,0.01724,0.000907,573.8,66.7,878,2088
+baseline_test,test,answerable,16,6,0.375,0.1848,0.6136,0.0152,0.00095,574.5,75.1,913,2088
+baseline_test,test,unanswerable,3,3,1.0,0.4385,1.0,0.00204,0.000682,570.0,22.3,628,925
+improved_test,test,all,19,18,0.9474,0.7536,0.9906,0.04756,0.002503,2133.8,73.9,932,4792
+improved_test,test,answerable,16,15,0.9375,0.7167,0.9889,0.04046,0.002529,2134.5,78.8,937,1776
+improved_test,test,unanswerable,3,3,1.0,0.4385,1.0,0.00711,0.002368,2130.0,47.7,874,4792
+improved_v1_dev,dev,all,29,27,0.931,0.7804,0.9809,0.07329,0.002527,2079.6,89.6,845,2126
+improved_v1_dev,dev,answerable,25,23,0.92,0.7503,0.9778,0.06404,0.002562,2080.1,96.3,832,2126
+improved_v1_dev,dev,unanswerable,4,4,1.0,0.5101,1.0,0.00925,0.002313,2076.5,47.2,954,1076
+improved_v2_dev,dev,all,29,29,1.0,0.883,1.0,0.07504,0.002588,2134.6,90.6,877,1482
+improved_v2_dev,dev,answerable,25,25,1.0,0.8668,1.0,0.06566,0.002626,2135.1,98.3,859,1482
+improved_v2_dev,dev,unanswerable,4,4,1.0,0.5101,1.0,0.00938,0.002344,2131.5,42.5,1019,1259
