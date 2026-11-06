@@ -18,8 +18,8 @@ from datetime import datetime, timedelta, timezone
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "."
 PROJ = os.environ.get("CLAUDE_PROJECTS", os.path.expanduser("~/.claude/projects"))
-PIPE = os.environ.get("NCAAB_PIPELINE_DIR", "/Users/cv/projects/ncaab_2027")
-PORT = os.environ.get("PORTFOLIO_DIR", "/Users/cv/projects/portfolio/ncaab-analytics-case-studies")
+PIPE = os.environ.get("NCAAB_PIPELINE_DIR", os.path.expanduser("~/projects/ncaab_2027"))
+PORT = os.environ.get("PORTFOLIO_DIR", os.path.expanduser("~/projects/portfolio/ncaab-analytics-case-studies"))
 CT = timezone(timedelta(hours=-6))  # CST; DST ended 2026-11-01
 
 SESSIONS = {

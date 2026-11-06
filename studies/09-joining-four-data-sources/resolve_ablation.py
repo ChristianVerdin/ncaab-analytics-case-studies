@@ -13,7 +13,7 @@ import random
 import sqlite3
 import sys
 
-PIPE = os.environ.get("NCAAB_PIPELINE_DIR", "/Users/cv/projects/ncaab_2027")
+PIPE = os.environ.get("NCAAB_PIPELINE_DIR", os.path.expanduser("~/projects/ncaab_2027"))
 sys.path.insert(0, os.path.join(PIPE, "scripts"))
 import fetch_kenpom as fk  # noqa: E402
 
