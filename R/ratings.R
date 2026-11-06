@@ -22,7 +22,8 @@ fit_ratings <- function(games, before = NULL, lambda = 1, cap = Inf, d1 = TRUE) 
   X <- sparseMatrix(i = rep(seq_len(n), 3), j = c(hi, ai, rep(k + 1, n)),
                     x = c(rep(1, n), rep(-1, n), 1 - g$neutral), dims = c(n, k + 1))
   y <- pmax(pmin(g$margin, cap), -cap)
-  penalty <- Diagonal(k + 1, c(rep(lambda, k), 0))
+  # a negligible penalty on HCA keeps the system solvable when every game so far is neutral or there are few games
+  penalty <- Diagonal(k + 1, c(rep(lambda, k), 1e-6))
   b <- as.numeric(solve(crossprod(X) + penalty, crossprod(X, y)))
   r <- b[seq_len(k)]
   resid <- y - as.numeric(X %*% b)
