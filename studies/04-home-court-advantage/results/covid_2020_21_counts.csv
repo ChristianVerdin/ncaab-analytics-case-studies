@@ -1,0 +1,10 @@
+quantity,value
+home games,3427
+home games with attendance 0,1885
+home games with attendance > 0,1542
+home games with 1-999,991
+"home games with 1,000+",551
+home teams,345
+home teams hosting both kinds,151
+home games at those teams,1570
+median attendance when > 0,624

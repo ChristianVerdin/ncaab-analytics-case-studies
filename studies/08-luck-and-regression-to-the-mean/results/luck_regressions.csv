@@ -1,0 +1,12 @@
+model,term,estimate,se,n,teams,r_squared
+H2 win % ~ H2 forecast from H1 ratings + H1 luck per game,h2_forecast_win_pct,0.974098412301157,0.01212001916058176,6613,370,0.5223807795407527
+H2 win % ~ H2 forecast from H1 ratings + H1 luck per game,luck_per_game_h1,0.07810546938306964,0.02492431150566415,6613,370,0.5223807795407527
+H2 win % ~ H2 forecast from H1 ratings + H1 close-game luck per game,h2_forecast_win_pct,0.9752366321365008,0.012125259310572588,6613,370,0.5219913756645729
+H2 win % ~ H2 forecast from H1 ratings + H1 close-game luck per game,close_luck_per_game_h1,0.06904727346818683,0.0296240869080902,6613,370,0.5219913756645729
+H2 margin per game ~ H2 forecast margin + H1 luck per game,h2_forecast_margin,0.8188663277387461,0.011530696668263177,6613,370,0.6107788578964735
+H2 margin per game ~ H2 forecast margin + H1 luck per game,luck_per_game_h1,1.558737174401766,0.6708046889583931,6613,370,0.6107788578964735
+H2 margin per game ~ H2 forecast margin + H1 close-game luck per game,h2_forecast_margin,0.819402039902042,0.011527330669085283,6613,370,0.6105834208369217
+H2 margin per game ~ H2 forecast margin + H1 close-game luck per game,close_luck_per_game_h1,1.2605715468621201,0.8101768084147084,6613,370,0.6105834208369217
+H2 luck per game ~ H1 luck per game,luck_per_game_h1,0.036385006095953826,0.013241603227913514,6613,370,0.0013270985274048686
+H2 close-game luck per game ~ H1 close-game luck per game,close_luck_per_game_h1,0.010996761611086646,0.014136911233366816,6613,370,1.259513560808445e-4
+H2 win % ~ H2 forecast from H1 ratings only,h2_forecast_win_pct,0.974867712286749,0.012131246847476986,6613,370,0.5216165504843495
