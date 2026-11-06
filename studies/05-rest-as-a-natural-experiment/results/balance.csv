@@ -1,0 +1,9 @@
+stat,value
+games_with_one_team_rested,1423
+mean_rating_gap_rested_minus_tired,5.737483111364224
+sd_rating_gap,5.71666402095006
+share_rested_team_better_rated,0.8489107519325368
+share_tired_team_listed_home,0.02881236823612087
+forecast_slope,-0.11618777992217483
+forecast_slope_se,0.027491448697851695
+home_listed_intercept,-0.3923795659176408
