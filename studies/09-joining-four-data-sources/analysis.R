@@ -15,7 +15,7 @@ study <- "studies/09-joining-four-data-sources"
 res <- function(f) file.path(study, "results", f)
 fig <- function(f) file.path(study, "figures", f)
 dir.create(file.path(study, "results"), showWarnings = FALSE)
-pipe <- Sys.getenv("NCAAB_PIPELINE_DIR", "/Users/cv/projects/ncaab_2027")
+pipe <- Sys.getenv("NCAAB_PIPELINE_DIR", path.expand("~/projects/ncaab_2027"))
 py <- Sys.getenv("NCAAB_PYTHON", file.path(pipe, ".venv/bin/python3"))
 have_private <- file.exists(file.path(pipe, "data/ncaab_analytics.db")) && file.exists(py)
 ro <- function(p) dbConnect(SQLite(), file.path(pipe, p), flags = SQLITE_RO)

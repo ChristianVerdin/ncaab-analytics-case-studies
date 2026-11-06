@@ -13,7 +13,7 @@ study <- "studies/11-built-with-ai-agents"
 res <- function(f) file.path(study, "results", f)
 fig <- function(f) file.path(study, "figures", f)
 dir.create(file.path(study, "results"), showWarnings = FALSE)
-py <- Sys.getenv("NCAAB_PYTHON", "/Users/cv/projects/ncaab_2027/.venv/bin/python3")
+py <- Sys.getenv("NCAAB_PYTHON", path.expand("~/projects/ncaab_2027/.venv/bin/python3"))
 projects <- Sys.getenv("CLAUDE_PROJECTS", path.expand("~/.claude/projects"))
 if (file.exists(py) && dir.exists(file.path(projects, "-Users-cv-projects-ARCHIVE-OFFSEASON-ncaab"))) {
   cat(system2(py, c(file.path(study, "parse_sessions.py"), file.path(study, "results")), stdout = TRUE), sep = "\n")

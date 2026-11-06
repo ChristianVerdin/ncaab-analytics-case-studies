@@ -1,7 +1,7 @@
 gate,how_it_works,evidence
 Written brief per worker,"Goal, files it may touch, forbidden actions, test plan, report format","13 briefs of 2202-5329 characters; session 2 adds one shared brief of 8,360"
 File ownership,Each worker gets an explicit file list; the lead edits everything else,0 of 123 Edit/Write calls by workers landed outside their list
-Workers never commit,"The lead reviews each report, checks claims against the database, then commits by path",0 commits by workers; 41 by the lead
+Workers never commit,"The lead reviews each report, checks claims against the database, then commits by path",0 commits by workers; 42 by the lead
 Read-only and sandbox rules,Live database and archive are read-only; tests run on a copy in a scratch folder,March worker replayed 2026 (67 games) and a synthetic 76-team bracket on a database copy
 Paid-API budget,Hard cap on live calls per worker,Feed worker used 1 of its 2 allowed live calls (3 credits)
 Cheap health check,"smoke_test.sh: config, database, mappings, seed files, tests; costs no API credits",25 runs in session 1
