@@ -1,0 +1,5 @@
+model,term,estimate,se,n,teams,r_squared
+Next-season win % ~ rating + luck per game,rating_this_season,0.012881949898286617,2.9765366754132185e-4,6268,369,0.35588827476798235
+Next-season win % ~ rating + luck per game,luck_per_game_this_season,-0.05614201902534966,0.03645183629777405,6268,369,0.35588827476798235
+Next-season win % ~ rating + close-game luck per game,rating_this_season,0.012875770114894072,2.976934911446753e-4,6268,369,0.35603025978718494
+Next-season win % ~ rating + close-game luck per game,close_luck_this_season,-0.08546156234989945,0.044313196744897386,6268,369,0.35603025978718494

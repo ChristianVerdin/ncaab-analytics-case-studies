@@ -1,0 +1,37 @@
+measure,kind,comparison,r,ci_low,ci_high,n
+Point margin per game,skill,First half to second half,0.518374869151113,0.4812078183485293,0.5521161983383991,6613
+Point margin per game,skill,Season to next season,0.6652247173485998,0.6369597416642059,0.6904953137758197,6268
+Point margin per game,skill,"First half to second half, excl. 2020-21",0.5144123093195431,0.47551033539460286,0.548353479748781,6334
+Rating (opponent-adjusted margin),skill,First half to second half,0.5667929791466737,0.5322297889505672,0.5997826337172805,6613
+Rating (opponent-adjusted margin),skill,Season to next season,0.8237328082662979,0.8050082766933504,0.8404118546977172,6268
+Rating (opponent-adjusted margin),skill,"First half to second half, excl. 2020-21",0.5667209822053195,0.5291808842503912,0.6006095253767225,6334
+Win percentage,mixed,First half to second half,0.47747943181881036,0.44500641621527914,0.50993076022575,6613
+Win percentage,mixed,Season to next season,0.5745063804498035,0.5469821791362005,0.6019833513454793,6268
+Win percentage,mixed,"First half to second half, excl. 2020-21",0.4777555784757653,0.4455802209331379,0.5108792777437552,6334
+Wins above expected (all games),luck,First half to second half,0.0360370446837091,0.009464285333825472,0.0619852495719194,6613
+Wins above expected (all games),luck,Season to next season,0.022908744378364765,-0.004145352933542801,0.048139450177353584,6268
+Wins above expected (all games),luck,"First half to second half, excl. 2020-21",0.03710834545970812,0.01108517125708391,0.06337401259655281,6334
+Close-game wins above expected,luck,First half to second half,0.01171027822372313,-0.013631614389910203,0.037019044737537865,6613
+Close-game wins above expected,luck,Season to next season,0.008339249658211272,-0.017089624770654798,0.034255110224655584,6268
+Close-game wins above expected,luck,"First half to second half, excl. 2020-21",0.013370408781655572,-0.01260335676440869,0.038613519567891226,6334
+Close-game win percentage,luck,First half to second half,0.04022769679802548,0.011725038019223971,0.06626499667396053,6312
+Close-game win percentage,luck,Season to next season,0.036160458236947655,0.009865385796108411,0.06227555991263309,6254
+Close-game win percentage,luck,"First half to second half, excl. 2020-21",0.045521965474416774,0.017698229868537592,0.07259412946585575,6056
+Close-game wins above expected (margin <= 3 or OT),robustness,First half to second half,0.008280286435076854,-0.016238829496032222,0.03258827809233926,6613
+Close-game wins above expected (margin <= 3 or OT),robustness,Season to next season,0.017199955209300666,-0.006539312472685095,0.0434997749111951,6268
+Close-game wins above expected (margin <= 3 or OT),robustness,"First half to second half, excl. 2020-21",0.009695492864986083,-0.015588719833499895,0.03315262147621024,6334
+Close-game wins above expected (OT only),robustness,First half to second half,-3.974350706968175e-4,-0.02509433884855023,0.024181077953052833,6613
+Close-game wins above expected (OT only),robustness,Season to next season,0.019281627653554123,-0.007399936062030189,0.04412138374302452,6268
+Close-game wins above expected (OT only),robustness,"First half to second half, excl. 2020-21",-4.298873882249371e-4,-0.02484962002340417,0.023015824711264996,6334
+Close-game win percentage (3+ close games each half),robustness,First half to second half,0.03342557838430629,0.0015610634701448052,0.06490845938661724,3599
+Close-game win percentage (3+ close games each half),robustness,Season to next season,0.03896836171707669,0.009506079636135457,0.0677317294233954,5977
+Close-game win percentage (3+ close games each half),robustness,"First half to second half, excl. 2020-21",0.03718776150050922,0.005589705956185438,0.0712788621722868,3514
+Wins above expected (normal-theory expectation),robustness,First half to second half,0.05221436842176054,0.027724492851608485,0.08024597518002632,6613
+Wins above expected (normal-theory expectation),robustness,Season to next season,0.031366037242934845,0.005175255872404639,0.05591525041340808,6268
+Wins above expected (normal-theory expectation),robustness,"First half to second half, excl. 2020-21",0.05388588018151538,0.02737781234184299,0.08107123695957452,6334
+Close-game wins above expected (normal-theory expectation),robustness,First half to second half,0.014154885822735502,-0.011161412446482086,0.0399943583673068,6613
+Close-game wins above expected (normal-theory expectation),robustness,Season to next season,0.009824509663270607,-0.01796025973316561,0.03493938197693472,6268
+Close-game wins above expected (normal-theory expectation),robustness,"First half to second half, excl. 2020-21",0.01613982371318667,-0.011841763401401677,0.04150373898737201,6334
+Number of close games,schedule,First half to second half,0.063700162550943,0.038677545751318335,0.08895939038373239,6613
+Number of close games,schedule,Season to next season,0.10440923838274419,0.07578410736759714,0.13316142044650328,6268
+Number of close games,schedule,"First half to second half, excl. 2020-21",0.0547145248793748,0.028654404404446703,0.08078836038227119,6334

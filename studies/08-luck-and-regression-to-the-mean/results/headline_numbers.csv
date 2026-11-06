@@ -1,0 +1,9 @@
+quantity,value
+team-seasons (both halves >= 8 games),6613
+mean games per half,15.12392257674278
+mean close games per half (primary),3.766898533192233
+share of games that are close (primary),0.2489402047117456
+top-decile H1 wins above expected,1.9682676338443823
+top-decile H2 wins above expected,0.061787933811697816
+bottom-decile H1 wins above expected,-1.9085700451244487
+bottom-decile H2 wins above expected,-0.07086691645851194

@@ -1,0 +1,9 @@
+quantity,estimate,ci_low,ci_high
+"random-effects mean HCA, conference games",2.764419489399598,2.5102903909813734,3.0185485878178224
+"between-conference SD of true HCA (tau, Paule-Mandel)",0.5735917047653782,0.3698735347765968,0.8635369923035399
+Cochran Q,80.83393161250434,NA,NA
+Q degrees of freedom,31,NA,NA
+Q p-value,2.524020337708524e-6,NA,NA
+conferences,32,NA,NA
+games,16519,NA,NA
+correlation of conference HCA with log median attendance,0.6154282677147799,0.3396141863313893,0.7937801028591677
