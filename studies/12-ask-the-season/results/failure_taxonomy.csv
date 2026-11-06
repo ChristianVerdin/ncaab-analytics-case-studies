@@ -1,0 +1,12 @@
+run,failure,n
+baseline_dev,name match,10
+baseline_dev,refused: thought the season had not happened,2
+baseline_dev,wrong filter,1
+baseline_dev,wrong join,1
+baseline_dev,wrong season,1
+baseline_test,name match,4
+baseline_test,refused: thought the season had not happened,2
+baseline_test,sql error,1
+baseline_test,wrong filter,3
+improved_test,wrong filter,1
+improved_v1_dev,wrong season,2

@@ -1,0 +1,9 @@
+run,prompt,split,subset,n,correct,accuracy,ci_low,ci_high,label
+baseline_dev,Baseline: schema only,Dev (tuned on),All questions,29,14,0.4828,0.3139,0.6557,14/29
+baseline_dev,Baseline: schema only,Dev (tuned on),Answerable questions only,25,10,0.4,0.234,0.5926,10/25
+baseline_test,Baseline: schema only,Test (held out),All questions,19,9,0.4737,0.2733,0.6829,9/19
+baseline_test,Baseline: schema only,Test (held out),Answerable questions only,16,6,0.375,0.1848,0.6136,6/16
+improved_test,"Improved: notes, rules, examples",Test (held out),All questions,19,18,0.9474,0.7536,0.9906,18/19
+improved_test,"Improved: notes, rules, examples",Test (held out),Answerable questions only,16,15,0.9375,0.7167,0.9889,15/16
+improved_v2_dev,"Improved: notes, rules, examples",Dev (tuned on),All questions,29,29,1,0.883,1,29/29
+improved_v2_dev,"Improved: notes, rules, examples",Dev (tuned on),Answerable questions only,25,25,1,0.8668,1,25/25

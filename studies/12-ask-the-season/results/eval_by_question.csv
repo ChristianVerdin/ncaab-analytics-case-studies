@@ -1,0 +1,579 @@
+run,id,split,category,correct,outcome,failure,note,in_tokens,out_tokens,cost_usd,latency_ms,wall_ms,pred_sql,error,pred_rows
+baseline_dev,L01,dev,lookup,0,wrong_result,name match,guessed team_id = 'gonzaga'; ids are numeric ESPN ids,574,33,0.000739,809,1117,"SELECT wins, losses FROM team_seasons WHERE team_id = 'gonzaga' AND season = 2023",,[]
+baseline_dev,L02,dev,lookup,1,correct,,,574,74,0.000944,830,1053,"SELECT home_name, away_name, home_score, away_score, 
+       CASE WHEN home_score > away_score THEN home_name ELSE away_name END as winner
+FROM games
+WHERE season = 2023 AND tourney_round = 'National Championship'",,"[[""UConn Huskies"", ""San Diego State Aztecs"", 76, 59, ""UConn Huskies""]]"
+baseline_dev,L04,dev,lookup,0,wrong_result,name match,name = 'Texas' matches nothing; display names end in the mascot,572,37,0.000757,747,1409,SELECT conference FROM teams WHERE name = 'Texas' AND first_season <= 2024 AND last_season >= 2024,,[]
+baseline_dev,L07,dev,lookup,0,wrong_result,wrong season,used season 2020 for 2020-21 (season is the ending year),574,20,0.000674,713,925,SELECT hca FROM seasons WHERE season = 2020,,[[3.56]]
+baseline_dev,L08,dev,lookup,0,wrong_result,name match,name = 'Saint Mary''s' exact match on a display name,573,50,0.000823,830,1052,"SELECT efg_pct
+FROM team_seasons
+WHERE team_id = (SELECT team_id FROM teams WHERE name = 'Saint Mary''s')
+AND season = 2025",,[]
+baseline_dev,A01,dev,aggregate,1,correct,,,573,36,0.000753,852,2898,"SELECT COUNT(*) as overtime_games
+FROM games
+WHERE season = 2026 AND ot_periods > 0",,[[327]]
+baseline_dev,A03,dev,aggregate,1,correct,,,576,38,0.000766,1028,4777,"SELECT COUNT(DISTINCT team_id) 
+FROM team_seasons 
+WHERE season = 2026 AND wins >= 30",,[[12]]
+baseline_dev,A05,dev,aggregate,1,correct,,,572,49,0.000817,773,6403,"SELECT conference, AVG(rating) as avg_rating
+FROM team_seasons
+WHERE season = 2026
+GROUP BY conference
+ORDER BY avg_rating DESC
+LIMIT 1",,"[[""SEC"", 14.428749999999999]]"
+baseline_dev,A07,dev,aggregate,0,wrong_result,name match,name = 'Kentucky' exact match,579,64,0.000899,900,1274,"SELECT AVG(attendance) as avg_attendance
+FROM games
+WHERE season = 2024
+  AND home_id = (SELECT team_id FROM teams WHERE name = 'Kentucky')
+  AND neutral = 0
+  AND attendance IS NOT NULL",,[[null]]
+baseline_dev,A09,dev,aggregate,0,wrong_result,wrong filter,season_type = 3 also counts NIT and CBI games,582,53,0.000847,827,2956,"SELECT COUNT(*) as close_games
+FROM games
+WHERE season BETWEEN 2021 AND 2026
+  AND season_type = 3
+  AND ABS(margin) <= 3",,[[127]]
+baseline_dev,J01,dev,join,0,wrong_result,name match,name = 'Duke' exact match,568,272,0.001928,1554,5360,"SELECT DISTINCT g.away_id, g.away_name
+FROM games g
+WHERE g.home_id = (SELECT team_id FROM teams WHERE name = 'Duke')
+  AND g.season = 2025
+  AND g.away_score > g.home_score
+UNION
+SELECT DISTINCT g.home_id, g.home_name
+FROM games g
+WHERE g.away_id = (SELECT team_id FROM teams WHERE name = 'Duke')
+  AND g.season = 2025
+  AND g.home_score > g.away_score
+ORDER BY away_name",,[]
+baseline_dev,J02,dev,join,0,refused_incorrectly,refused: thought the season had not happened,said the 2025 season was not yet complete or not in the data,570,58,0.00086,1051,7260,,,
+baseline_dev,J03,dev,join,0,wrong_result,wrong join,joined teams.conference (latest conference) instead of team_seasons for 2023-24; UCLA and USC counted as Big Ten,575,100,0.001075,932,1374,"SELECT COUNT(*) as wins
+FROM team_games tg
+JOIN teams t ON tg.team_id = t.team_id
+JOIN teams opp ON tg.opp_id = opp.team_id
+WHERE tg.season = 2024
+AND t.conference = 'Big Ten'
+AND opp.conference = 'SEC'
+AND tg.win = 1",,[[8]]
+baseline_dev,J05,dev,join,0,refused_incorrectly,refused: thought the season had not happened,said 2025-26 is in the future,583,43,0.000798,987,3230,,,
+baseline_dev,J08,dev,join,0,wrong_result,name match,name = 'Kansas' exact match,582,111,0.001137,1075,5139,"SELECT AVG(tg.opp_pts) as avg_points_allowed
+FROM team_games tg
+JOIN teams t ON tg.opp_id = t.team_id
+WHERE tg.team_id = (SELECT team_id FROM teams WHERE name = 'Kansas')
+AND tg.season = 2024
+AND t.conference = 'Big 12'
+AND tg.season_type IN (1, 2)",,[[null]]
+baseline_dev,C02,dev,comparison,0,wrong_result,name match,guessed team_id 'alabama' and 'gonzaga',576,48,0.000816,846,1383,"SELECT team_id, ppg
+FROM team_seasons
+WHERE season = 2023 AND team_id IN ('alabama', 'gonzaga')
+ORDER BY ppg DESC",,[]
+baseline_dev,C03,dev,comparison,0,wrong_result,name match,guessed team_ids 'duke' and 'unc'; also used seasons 2019-2025,587,414,0.002657,2934,3156,"SELECT 
+  COUNT(*) as total_games,
+  SUM(CASE WHEN (home_id = 'duke' AND away_id = 'unc' AND home_score > away_score) 
+           OR (away_id = 'duke' AND home_id = 'unc' AND away_score > home_score) THEN 1 ELSE 0 END) as duke_wins
+FROM games
+WHERE season >= 2019 AND season <= 2025
+AND ((home_id = 'duke' AND away_id = 'unc') OR (home_id = 'unc' AND away_id = 'duke'))",,"[[0, null]]"
+baseline_dev,C04,dev,comparison,1,correct,,,580,229,0.001725,1630,1847,"SELECT team_id, name, tempo, rating
+FROM team_seasons
+WHERE season = 2026 AND team_id IN (
+  SELECT team_id FROM team_seasons 
+  WHERE season = 2026 
+  ORDER BY rating DESC 
+  LIMIT 10
+)
+ORDER BY tempo ASC
+LIMIT 1",,"[[""248"", ""Houston Cougars"", 64.8, 22.94]]"
+baseline_dev,C07,dev,comparison,1,correct,,,573,52,0.000833,916,1282,"SELECT team_id, name, conf_wins
+FROM team_seasons
+WHERE season = 2026 AND conference = 'Big Ten'
+ORDER BY conf_wins DESC
+LIMIT 1",,"[[""130"", ""Michigan Wolverines"", 19]]"
+baseline_dev,C08,dev,comparison,0,wrong_result,name match,guessed team_ids 'michigan' and 'michigan-state',578,140,0.001278,1048,2242,"SELECT 
+  ts1.team_id,
+  ts1.name,
+  ts1.rating,
+  ts2.team_id,
+  ts2.name,
+  ts2.rating,
+  ABS(ts1.rating - ts2.rating) as rating_gap
+FROM team_seasons ts1
+JOIN team_seasons ts2 ON ts1.season = ts2.season
+WHERE ts1.season = 2026
+  AND ts1.team_id = 'michigan'
+  AND ts2.team_id = 'michigan-state'",,[]
+baseline_dev,T01,dev,time_filter,1,correct,,,571,25,0.000696,724,3827,SELECT COUNT(*) FROM games WHERE date = '2026-01-17',,[[145]]
+baseline_dev,T03,dev,time_filter,1,correct,,,568,36,0.000748,733,5561,"SELECT COUNT(*) as games_in_november_2024
+FROM games
+WHERE date LIKE '2024-11%'",,[[1533]]
+baseline_dev,T04,dev,time_filter,0,wrong_result,name match,guessed team_id 'CONN',573,94,0.001043,950,1165,"SELECT 
+  SUM(CASE WHEN win = 1 THEN 1 ELSE 0 END) as wins,
+  SUM(CASE WHEN win = 0 THEN 1 ELSE 0 END) as losses
+FROM team_games
+WHERE team_id = 'CONN' AND date < '2024-01-01'",,"[[null, null]]"
+baseline_dev,T06,dev,time_filter,1,correct,,,569,55,0.000844,851,2860,"SELECT COUNT(*) as overtime_games_december_2022
+FROM games
+WHERE season = 2023
+  AND date LIKE '2022-12%'
+  AND ot_periods > 0",,[[55]]
+baseline_dev,T07,dev,time_filter,1,correct,,,575,22,0.000685,684,4374,SELECT MIN(date) FROM games WHERE season = 2022,,"[[""2021-11-09""]]"
+baseline_dev,U01,dev,unanswerable,1,refused_correctly,,,570,117,0.001155,1254,6646,,,
+baseline_dev,U04,dev,unanswerable,1,empty_result_accepted,,,569,32,0.000729,777,1056,"SELECT wins, losses FROM team_seasons WHERE team_id = 'kansas' AND season = 2019",,[]
+baseline_dev,U05,dev,unanswerable,1,refused_correctly,,,570,68,0.00091,1171,3078,,,
+baseline_dev,U06,dev,unanswerable,1,refused_correctly,,,577,54,0.000847,1000,5102,,,
+baseline_test,L03,test,lookup,0,wrong_result,name match,guessed team_id = 'houston',573,32,0.000733,929,1223,"SELECT tempo
+FROM team_seasons
+WHERE team_id = 'houston' AND season = 2024",,[]
+baseline_test,L05,test,lookup,1,correct,,,571,39,0.000766,760,1674,"SELECT attendance
+FROM games
+WHERE season = 2024
+  AND tourney_round = 'National Championship'
+LIMIT 1",,[[74423]]
+baseline_test,L06,test,lookup,0,wrong_result,name match,guessed team_id = 'michigan',570,33,0.000735,2088,2301,SELECT off_eff FROM team_seasons WHERE team_id = 'michigan' AND season = 2026,,[]
+baseline_test,A02,test,aggregate,1,correct,,,573,37,0.000758,688,899,"SELECT AVG(home_score + away_score) as avg_combined_score
+FROM games
+WHERE season = 2025",,[[146.33566433566435]]
+baseline_test,A04,test,aggregate,0,wrong_result,wrong filter,season_type = 1 does not exist (regular season is 2); result NULL,580,88,0.00102,1053,1269,"SELECT 
+  ROUND(100.0 * SUM(CASE WHEN home_score > away_score THEN 1 ELSE 0 END) / COUNT(*), 2) as home_win_percentage
+FROM games
+WHERE season = 2021 
+  AND season_type = 1 
+  AND neutral = 0",,[[null]]
+baseline_test,A06,test,aggregate,0,wrong_result,wrong filter,season_type = 3 also counts NIT and CBI games (53 extra rows grouped as NULL),574,54,0.000844,755,5129,"SELECT tourney_round, COUNT(*) as games_played
+FROM games
+WHERE season = 2024 AND season_type = 3
+GROUP BY tourney_round
+ORDER BY games_played DESC",,"[[null, 53], [""1st Round"", 32], [""2nd Round"", 16], [""Sweet 16"", 8], [""First Four"", 4], [""Elite 8"", 4], [""Final Four"", 2], [""National Championship"", 1]]"
+baseline_test,A08,test,aggregate,1,correct,,,571,40,0.000771,878,6856,"SELECT COUNT(DISTINCT team_id) 
+FROM team_seasons 
+WHERE season = 2020 AND box_games > 0",,[[353]]
+baseline_test,J04,test,join,0,wrong_result,wrong filter,guessed tourney_round = '1'; the value is '1st Round',580,182,0.00149,1237,1512,"SELECT t.team_id, t.name, ts.rating
+FROM games g
+JOIN teams t ON g.away_id = t.team_id OR g.home_id = t.team_id
+JOIN team_seasons ts ON t.team_id = ts.team_id AND g.season = ts.season
+WHERE g.season = 2024
+  AND g.tourney_round = '1'
+  AND g.season_type = 3
+  AND ((g.away_id = t.team_id AND g.away_score < g.home_score)
+       OR (g.home_id = t.team_id AND g.home_score < g.away_score))
+ORDER BY ts.rating DESC
+LIMIT 1",,[]
+baseline_test,J06,test,join,0,sql_error,sql error,,579,216,0.001659,1197,3711,"SELECT 
+  g.season,
+  g.home_name as champion,
+  ts.rating_rank
+FROM games g
+JOIN team_seasons ts ON g.home_id = ts.team_id AND g.season = ts.season
+WHERE g.season BETWEEN 2021 AND 2026
+  AND g.tourney_round = 'National Championship'
+  AND g.home_score > g.away_score
+UNION ALL
+SELECT 
+  g.season,
+  g.away_name as champion,
+  ts.rating_rank
+FROM games g
+JOIN team_seasons ts ON g.away_id = ts.team_id AND g.season = ts.season
+WHERE g.season BETWEEN 2021 AND 2026
+  AND g.tourney_round = 'National Championship'
+  AND g.away_score > g.home_score
+ORDER BY season",1st ORDER BY term does not match any column in the result set,
+baseline_test,J07,test,join,0,refused_incorrectly,refused: thought the season had not happened,said 2024-25 and 2025-26 are in the future,578,59,0.000873,1408,5970,,,
+baseline_test,C01,test,comparison,0,wrong_result,name match,guessed team_ids 'houston' and 'tennessee',574,55,0.000849,843,1058,"SELECT team_id, name, def_eff
+FROM team_seasons
+WHERE season = 2026 AND team_id IN ('houston', 'tennessee')
+ORDER BY def_eff ASC",,[]
+baseline_test,C05,test,comparison,0,wrong_result,name match,guessed team_ids 'kansas' and 'kentucky',575,61,0.00088,913,2991,"SELECT team_id, name, orb_pct
+FROM team_seasons
+WHERE season = 2024 AND team_id IN ('kansas', 'kentucky')
+ORDER BY orb_pct DESC
+LIMIT 1",,[]
+baseline_test,C06,test,comparison,1,correct,,,577,88,0.001017,862,4702,"SELECT 
+  game_id,
+  date,
+  home_name,
+  away_name,
+  home_score,
+  away_score,
+  (home_score + away_score) as combined_points
+FROM games
+WHERE season = 2026
+ORDER BY (home_score + away_score) DESC
+LIMIT 5",,"[[""401808244"", ""2026-02-18"", ""Alabama Crimson Tide"", ""Arkansas Razorbacks"", 117, 115, 232], [""401807703"", ""2026-01-24"", ""North Florida Ospreys"", ""Bellarmine Knights"", 117, 114, 231], [""401822867"", ""2025-12-13"", ""Butler Bulldogs"", ""Providence Friars"", 113, 110, 223], [""401826743"", ""2025-12-16"", ""Denver Pioneers"", ""Colorado Colorado Springs Mountain Lions"", 129, 93, 222], [""401823374"", ""2025-11-03"", ""Ohio State Buckeyes"", ""IU Indianapolis Jaguars"", 118, 102, 220]]"
+baseline_test,T02,test,time_filter,0,refused_incorrectly,refused: thought the season had not happened,said February 2026 is in the future,568,42,0.000778,869,6427,,,
+baseline_test,T05,test,time_filter,1,correct,,,572,119,0.001167,1045,1263,"SELECT DISTINCT tg.team_id, t.name, COUNT(*) as march_wins
+FROM team_games tg
+JOIN teams t ON tg.team_id = t.team_id
+WHERE tg.season = 2025
+  AND tg.date LIKE '2025-03%'
+  AND tg.win = 1
+GROUP BY tg.team_id, t.name
+HAVING COUNT(*) >= 10
+ORDER BY march_wins DESC",,"[[""150"", ""Duke Blue Devils"", 10], [""248"", ""Houston Cougars"", 10], [""57"", ""Florida Gators"", 10]]"
+baseline_test,T08,test,time_filter,1,correct,,,577,56,0.000857,730,3015,"SELECT AVG(home_score + away_score) as average_combined_score
+FROM games
+WHERE date >= '2026-03-01' AND home_score IS NOT NULL AND away_score IS NOT NULL",,[[148.46166134185304]]
+baseline_test,U02,test,unanswerable,1,refused_correctly,,,573,51,0.000828,925,4786,,,
+baseline_test,U03,test,unanswerable,1,refused_correctly,,,567,8,0.000607,628,6267,,,
+baseline_test,U07,test,unanswerable,1,refused_correctly,,,570,8,0.00061,586,1001,,,
+improved_test,L03,test,lookup,1,correct,,,2133,36,0.002313,841,1345,"SELECT tempo FROM team_seasons
+WHERE season = 2024
+  AND name LIKE 'Houston Cougars%'",,[[64.1]]
+improved_test,L05,test,lookup,1,correct,,,2131,47,0.002366,720,940,"SELECT attendance
+FROM games
+WHERE season = 2024
+  AND game_type = 'ncaa_tournament'
+  AND tourney_round = 'National Championship'",,[[74423]]
+improved_test,L06,test,lookup,1,correct,,,2130,38,0.00232,781,998,"SELECT off_eff FROM team_seasons
+WHERE season = 2026
+  AND name LIKE 'Michigan Wolverines%'",,[[121.9]]
+improved_test,A02,test,aggregate,1,correct,,,2133,36,0.002313,678,1287,"SELECT AVG(home_score + away_score) AS avg_combined_score
+FROM games
+WHERE season = 2025",,[[146.33566433566435]]
+improved_test,A04,test,aggregate,1,correct,,,2140,94,0.00261,1776,3070,"SELECT 
+  ROUND(100.0 * SUM(CASE WHEN margin > 0 THEN 1 ELSE 0 END) / COUNT(*), 2) AS home_win_percentage
+FROM games
+WHERE season = 2021
+  AND season_type = 2
+  AND game_type = 'regular'
+  AND neutral = 0",,[[64.38]]
+improved_test,A06,test,aggregate,1,correct,,,2134,153,0.002899,1181,5110,"SELECT tourney_round, COUNT(*) AS games
+FROM games
+WHERE season = 2024 AND game_type = 'ncaa_tournament'
+GROUP BY tourney_round
+ORDER BY CASE tourney_round
+  WHEN 'First Four' THEN 1
+  WHEN '1st Round' THEN 2
+  WHEN '2nd Round' THEN 3
+  WHEN 'Sweet 16' THEN 4
+  WHEN 'Elite 8' THEN 5
+  WHEN 'Final Four' THEN 6
+  WHEN 'National Championship' THEN 7
+END",,"[[""First Four"", 4], [""1st Round"", 32], [""2nd Round"", 16], [""Sweet 16"", 8], [""Elite 8"", 4], [""Final Four"", 2], [""National Championship"", 1]]"
+improved_test,A08,test,aggregate,1,correct,,,2131,29,0.002276,700,6837,"SELECT COUNT(DISTINCT team_id)
+FROM team_seasons
+WHERE season = 2020",,[[353]]
+improved_test,J04,test,join,1,correct,,,2140,150,0.00289,1096,1376,"SELECT ts.name, ts.rating
+FROM team_seasons ts
+JOIN games g ON ts.team_id IN (g.home_id, g.away_id) AND ts.season = g.season
+WHERE g.season = 2024
+  AND g.game_type = 'ncaa_tournament'
+  AND g.tourney_round = '1st Round'
+  AND ((g.home_id = ts.team_id AND g.margin < 0) OR (g.away_id = ts.team_id AND g.margin > 0))
+ORDER BY ts.rating DESC
+LIMIT 1",,"[[""Auburn Tigers"", 20.59]]"
+improved_test,J06,test,join,0,wrong_result,wrong filter,counted only champions listed as the home team (margin > 0); dropped Baylor (2020-21) and Florida (2024-25),2139,124,0.002759,1108,3335,"SELECT 
+  g.season,
+  g.home_name AS champion,
+  ts.rating_rank
+FROM games g
+JOIN team_seasons ts ON ts.season = g.season AND ts.team_id = g.home_id
+WHERE g.season BETWEEN 2021 AND 2026
+  AND g.game_type = 'ncaa_tournament'
+  AND g.tourney_round = 'National Championship'
+  AND g.margin > 0
+ORDER BY g.season",,"[[2022, ""Kansas Jayhawks"", 6], [2023, ""UConn Huskies"", 5], [2024, ""UConn Huskies"", 3], [2026, ""Michigan Wolverines"", 1]]"
+improved_test,J07,test,join,1,correct,,,2138,88,0.002578,937,1256,"SELECT ts2.name, ts2.rating - ts1.rating AS rating_improvement
+FROM team_seasons ts1
+JOIN team_seasons ts2 ON ts1.team_id = ts2.team_id
+WHERE ts1.season = 2025 AND ts2.season = 2026
+ORDER BY rating_improvement DESC
+LIMIT 1",,"[[""Miami Hurricanes"", 16.98]]"
+improved_test,C01,test,comparison,1,correct,,,2134,68,0.002474,932,1367,"SELECT name, def_eff
+FROM team_seasons
+WHERE season = 2026
+  AND (name LIKE 'Houston Cougars%' OR name LIKE 'Tennessee Volunteers%')
+ORDER BY def_eff ASC
+LIMIT 1",,"[[""Houston Cougars"", 95.9]]"
+improved_test,C05,test,comparison,1,correct,,,2135,70,0.002485,915,1131,"SELECT name, orb_pct
+FROM team_seasons
+WHERE season = 2024
+  AND (name LIKE 'Kansas Jayhawks%' OR name LIKE 'Kentucky Wildcats%')
+ORDER BY orb_pct DESC
+LIMIT 1",,"[[""Kentucky Wildcats"", 28.9]]"
+improved_test,C06,test,comparison,1,correct,,,2137,73,0.002502,971,1995,"SELECT 
+  home_name,
+  away_name,
+  home_score,
+  away_score,
+  home_score + away_score AS combined_points,
+  date
+FROM games
+WHERE season = 2026
+ORDER BY combined_points DESC
+LIMIT 5",,"[[""Alabama Crimson Tide"", ""Arkansas Razorbacks"", 117, 115, 232, ""2026-02-18""], [""North Florida Ospreys"", ""Bellarmine Knights"", 117, 114, 231, ""2026-01-24""], [""Butler Bulldogs"", ""Providence Friars"", 113, 110, 223, ""2025-12-13""], [""Denver Pioneers"", ""Colorado Colorado Springs Mountain Lions"", 129, 93, 222, ""2025-12-16""], [""Ohio State Buckeyes"", ""IU Indianapolis Jaguars"", 118, 102, 220, ""2025-11-03""]]"
+improved_test,T02,test,time_filter,1,correct,,,2128,88,0.002568,989,1403,"SELECT SUM(win) AS wins, SUM(1 - win) AS losses
+FROM team_games
+WHERE season = 2026
+  AND team_id = (SELECT team_id FROM teams WHERE name LIKE 'Arizona Wildcats%')
+  AND date BETWEEN '2026-02-01' AND '2026-02-28'",,"[[5, 2]]"
+improved_test,T05,test,time_filter,1,correct,,,2132,126,0.002762,1072,5389,"SELECT ts.name, COUNT(*) AS march_wins
+FROM team_games tg
+JOIN team_seasons ts ON ts.season = tg.season AND ts.team_id = tg.team_id
+WHERE tg.season = 2025
+  AND tg.date BETWEEN '2025-03-01' AND '2025-03-31'
+  AND tg.win = 1
+GROUP BY tg.team_id
+HAVING COUNT(*) >= 10
+ORDER BY march_wins DESC",,"[[""Florida Gators"", 10], [""Houston Cougars"", 10], [""Duke Blue Devils"", 10]]"
+improved_test,T08,test,time_filter,1,correct,,,2137,41,0.002342,761,7012,"SELECT AVG(home_score + away_score) AS average_combined_score
+FROM games
+WHERE date >= '2026-03-01'",,[[148.46166134185304]]
+improved_test,U02,test,unanswerable,1,refused_correctly,,,2133,43,0.002348,4792,5279,,,
+improved_test,U03,test,unanswerable,1,empty_result_accepted,,,2127,61,0.002432,857,6983,"SELECT home_name, away_name, home_score, away_score
+FROM games
+WHERE season = 2020
+  AND game_type = 'ncaa_tournament'
+  AND tourney_round = 'National Championship'",,[]
+improved_test,U07,test,unanswerable,1,refused_correctly,,,2130,39,0.002325,874,1166,,,
+improved_v1_dev,L01,dev,lookup,1,correct,,,2079,37,0.002264,666,973,"SELECT wins, losses FROM team_seasons WHERE season = 2023 AND name LIKE 'Gonzaga Bulldogs%'",,"[[31, 6]]"
+improved_v1_dev,L02,dev,lookup,1,correct,,,2079,123,0.002694,1056,1272,"SELECT 
+  CASE WHEN margin > 0 THEN home_name ELSE away_name END AS winner,
+  CASE WHEN margin > 0 THEN home_score ELSE away_score END AS winner_score,
+  CASE WHEN margin > 0 THEN away_score ELSE home_score END AS loser_score
+FROM games
+WHERE season = 2023 AND game_type = 'ncaa_tournament' AND tourney_round = 'National Championship'",,"[[""UConn Huskies"", 76, 59]]"
+improved_v1_dev,L04,dev,lookup,1,correct,,,2077,34,0.002247,752,1665,SELECT conference FROM team_seasons WHERE season = 2025 AND name LIKE 'Texas Longhorns%',,"[[""SEC""]]"
+improved_v1_dev,L07,dev,lookup,1,correct,,,2079,19,0.002174,775,988,SELECT hca FROM seasons WHERE season = 2021,,[[2.49]]
+improved_v1_dev,L08,dev,lookup,1,correct,,,2078,38,0.002268,1153,1366,"SELECT efg_pct FROM team_seasons WHERE season = 2025 AND name LIKE ""Saint Mary's Gaels%""",,[[50.4]]
+improved_v1_dev,A01,dev,aggregate,1,correct,,,2078,35,0.002253,767,2983,"SELECT COUNT(*) AS overtime_games
+FROM games
+WHERE season = 2026 AND ot_periods > 0",,[[327]]
+improved_v1_dev,A03,dev,aggregate,1,correct,,,2081,28,0.002221,703,4750,SELECT COUNT(*) FROM team_seasons WHERE season = 2026 AND wins >= 30,,[[12]]
+improved_v1_dev,A05,dev,aggregate,1,correct,,,2077,65,0.002402,755,6352,"SELECT ts.conference, AVG(ts.rating) AS avg_rating
+FROM team_seasons ts
+WHERE ts.season = 2026 AND ts.conference IS NOT NULL
+GROUP BY ts.conference
+ORDER BY avg_rating DESC
+LIMIT 1",,"[[""SEC"", 14.428749999999999]]"
+improved_v1_dev,A07,dev,aggregate,1,correct,,,2084,70,0.002434,811,1034,"SELECT AVG(attendance) AS avg_attendance
+FROM games
+WHERE season = 2024 
+  AND neutral = 0 
+  AND home_id = (SELECT team_id FROM teams WHERE name LIKE 'Kentucky Wildcats%')
+  AND attendance IS NOT NULL",,[[19927.88888888889]]
+improved_v1_dev,A09,dev,aggregate,1,correct,,,2087,53,0.002352,793,2842,"SELECT COUNT(*)
+FROM games
+WHERE season BETWEEN 2021 AND 2026
+  AND game_type = 'ncaa_tournament'
+  AND ABS(margin) <= 3",,[[60]]
+improved_v1_dev,J01,dev,join,1,correct,,,2073,140,0.002773,1148,4852,"SELECT DISTINCT g.away_name AS team_name
+FROM games g
+WHERE g.season = 2025
+  AND g.home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%')
+  AND g.margin < 0
+UNION
+SELECT DISTINCT g.home_name AS team_name
+FROM games g
+WHERE g.season = 2025
+  AND g.away_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%')
+  AND g.margin > 0
+ORDER BY team_name",,"[[""Clemson Tigers""], [""Houston Cougars""], [""Kansas Jayhawks""], [""Kentucky Wildcats""]]"
+improved_v1_dev,J02,dev,join,1,correct,,,2075,486,0.004505,2126,7833,"SELECT DISTINCT 
+  CASE WHEN g.home_id = ts.team_id THEN g.home_name ELSE g.away_name END,
+  ts.conference
+FROM games g
+JOIN team_seasons ts ON ts.season = 2025 AND ts.team_id IN (g.home_id, g.away_id)
+WHERE g.season = 2025 AND g.tourney_round = 'Final Four'",,"[[""Duke Blue Devils"", ""ACC""], [""Houston Cougars"", ""Big 12""], [""Auburn Tigers"", ""SEC""], [""Florida Gators"", ""SEC""]]"
+improved_v1_dev,J03,dev,join,1,correct,,,2080,184,0.003,1183,1659,"SELECT COUNT(*) AS wins
+FROM games g
+JOIN team_seasons ts_home ON ts_home.season = g.season AND ts_home.team_id = g.home_id
+JOIN team_seasons ts_away ON ts_away.season = g.season AND ts_away.team_id = g.away_id
+WHERE g.season = 2024
+  AND g.home_d1 = 1 AND g.away_d1 = 1
+  AND ((ts_home.conference = 'Big Ten' AND ts_away.conference = 'SEC' AND g.margin > 0)
+    OR (ts_away.conference = 'Big Ten' AND ts_home.conference = 'SEC' AND g.margin < 0))",,[[6]]
+improved_v1_dev,J05,dev,join,1,correct,,,2088,173,0.002953,1239,3752,"SELECT 
+  SUM(CASE WHEN tg.win = 1 THEN 1 ELSE 0 END) AS wins,
+  SUM(CASE WHEN tg.win = 0 THEN 1 ELSE 0 END) AS losses
+FROM team_games tg
+JOIN team_seasons ts_opp ON ts_opp.season = tg.season AND ts_opp.team_id = tg.opp_id
+WHERE tg.season = 2026 
+  AND tg.team_id = (SELECT team_id FROM teams WHERE name LIKE 'Iowa State Cyclones%')
+  AND ts_opp.rating_rank <= 25",,"[[6, 6]]"
+improved_v1_dev,J08,dev,join,0,wrong_result,wrong season,used season 2023 for 2023-24,2087,97,0.002572,1669,6269,"SELECT AVG(opp_pts) AS points_allowed_per_game
+FROM team_games
+WHERE season = 2023
+  AND team_id = (SELECT team_id FROM teams WHERE name LIKE 'Kansas Jayhawks%')
+  AND opp_id IN (SELECT team_id FROM team_seasons WHERE season = 2023 AND conference = 'Big 12')",,[[70.0]]
+improved_v1_dev,C02,dev,comparison,1,correct,,,2081,44,0.002301,832,1365,"SELECT name, ppg FROM team_seasons WHERE season = 2023 AND name IN ('Alabama Crimson Tide', 'Gonzaga Bulldogs')",,"[[""Alabama Crimson Tide"", 81.8], [""Gonzaga Bulldogs"", 86.1]]"
+improved_v1_dev,C03,dev,comparison,1,correct,,,2092,207,0.003127,1280,1498,"SELECT COUNT(*) AS games_played, SUM(CASE WHEN (home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') AND margin > 0) OR (away_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') AND margin < 0) THEN 1 ELSE 0 END) AS duke_wins
+FROM games
+WHERE (home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') AND away_id = (SELECT team_id FROM teams WHERE name LIKE 'North Carolina Tar Heels%'))
+   OR (home_id = (SELECT team_id FROM teams WHERE name LIKE 'North Carolina Tar Heels%') AND away_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%'))",,"[[16, 9]]"
+improved_v1_dev,C04,dev,comparison,1,correct,,,2085,186,0.003015,1379,1588,"SELECT name, tempo
+FROM team_seasons
+WHERE season = 2026 AND rating_rank <= 10
+ORDER BY tempo ASC
+LIMIT 1",,"[[""Houston Cougars"", 64.8]]"
+improved_v1_dev,C07,dev,comparison,1,correct,,,2078,47,0.002313,737,956,"SELECT name, conf_wins
+FROM team_seasons
+WHERE season = 2026 AND conference = 'Big Ten'
+ORDER BY conf_wins DESC
+LIMIT 1",,"[[""Michigan Wolverines"", 19]]"
+improved_v1_dev,C08,dev,comparison,1,correct,,,2083,125,0.002708,1090,1491,"SELECT 
+  ts1.name,
+  ts1.rating,
+  ts2.name,
+  ts2.rating,
+  ABS(ts1.rating - ts2.rating) AS gap
+FROM team_seasons ts1
+JOIN team_seasons ts2 ON ts1.season = ts2.season
+WHERE ts1.season = 2026
+  AND ts1.name LIKE 'Michigan Wolverines%'
+  AND ts2.name LIKE 'Michigan State Spartans%'",,"[[""Michigan Wolverines"", 28.81, ""Michigan State Spartans"", 20.06, 8.75]]"
+improved_v1_dev,T01,dev,time_filter,1,correct,,,2076,25,0.002201,707,5123,SELECT COUNT(*) FROM games WHERE date = '2026-01-17',,[[145]]
+improved_v1_dev,T03,dev,time_filter,1,correct,,,2073,46,0.002303,780,6756,"SELECT COUNT(*) AS games_in_november_2024
+FROM games
+WHERE date BETWEEN '2024-11-01' AND '2024-11-30'",,[[1533]]
+improved_v1_dev,T04,dev,time_filter,0,wrong_result,wrong season,"used season 2023 (2022-23) with a 2024 date cutoff, wrong under either reading of the question",2078,80,0.002478,888,1359,"SELECT SUM(win) AS wins, SUM(1 - win) AS losses
+FROM team_games
+WHERE season = 2023 AND team_id = (SELECT team_id FROM teams WHERE name LIKE 'UConn Huskies%')
+  AND date < '2024-01-01'",,"[[31, 8]]"
+improved_v1_dev,T06,dev,time_filter,1,correct,,,2074,45,0.002299,845,3048,"SELECT COUNT(*)
+FROM games
+WHERE date BETWEEN '2022-12-01' AND '2022-12-31' AND ot_periods > 0",,[[55]]
+improved_v1_dev,T07,dev,time_filter,1,correct,,,2080,21,0.002185,692,4596,SELECT MIN(date) FROM games WHERE season = 2022,,"[[""2021-11-09""]]"
+improved_v1_dev,U01,dev,unanswerable,1,refused_correctly,,,2075,63,0.00239,1076,6688,,,
+improved_v1_dev,U04,dev,unanswerable,1,refused_correctly,,,2074,49,0.002319,898,1182,,,
+improved_v1_dev,U05,dev,unanswerable,1,refused_correctly,,,2075,41,0.00228,954,2998,,,
+improved_v1_dev,U06,dev,unanswerable,1,refused_correctly,,,2082,36,0.002262,766,4599,,,
+improved_v2_dev,L01,dev,lookup,1,correct,,,2134,39,0.002329,747,1050,"SELECT wins, losses FROM team_seasons
+WHERE season = 2023
+  AND name LIKE 'Gonzaga Bulldogs%'",,"[[31, 6]]"
+improved_v2_dev,L02,dev,lookup,1,correct,,,2134,123,0.002749,1137,1535,"SELECT 
+  CASE WHEN margin > 0 THEN home_name ELSE away_name END AS winner,
+  CASE WHEN margin > 0 THEN home_score ELSE away_score END AS winner_score,
+  CASE WHEN margin > 0 THEN away_score ELSE home_score END AS loser_score
+FROM games
+WHERE season = 2023 AND game_type = 'ncaa_tournament' AND tourney_round = 'National Championship'",,"[[""UConn Huskies"", 76, 59]]"
+improved_v2_dev,L04,dev,lookup,1,correct,,,2132,35,0.002307,799,1011,"SELECT conference FROM team_seasons
+WHERE season = 2025 AND name LIKE 'Texas Longhorns%'",,"[[""SEC""]]"
+improved_v2_dev,L07,dev,lookup,1,correct,,,2134,19,0.002229,783,1778,SELECT hca FROM seasons WHERE season = 2021,,[[2.49]]
+improved_v2_dev,L08,dev,lookup,1,correct,,,2133,53,0.002398,759,1136,"SELECT efg_pct FROM team_seasons
+WHERE season = 2025  -- 2024-25 ends in 2025
+  AND name LIKE ""Saint Mary's Gaels%""",,[[50.4]]
+improved_v2_dev,A01,dev,aggregate,1,correct,,,2133,35,0.002308,888,4947,"SELECT COUNT(*) AS overtime_games
+FROM games
+WHERE season = 2026 AND ot_periods > 0",,[[327]]
+improved_v2_dev,A03,dev,aggregate,1,correct,,,2136,30,0.002286,675,6478,"SELECT COUNT(*)
+FROM team_seasons
+WHERE season = 2026 AND wins >= 30",,[[12]]
+improved_v2_dev,A05,dev,aggregate,1,correct,,,2132,66,0.002462,859,1248,"SELECT ts.conference, AVG(ts.rating) AS avg_rating
+FROM team_seasons ts
+WHERE ts.season = 2026
+  AND ts.conference IS NOT NULL
+GROUP BY ts.conference
+ORDER BY avg_rating DESC
+LIMIT 1",,"[[""SEC"", 14.428749999999999]]"
+improved_v2_dev,A07,dev,aggregate,1,correct,,,2139,75,0.002514,798,2885,"SELECT AVG(attendance) AS avg_attendance
+FROM games
+WHERE season = 2024  -- 2023-24
+  AND neutral = 0
+  AND home_id = (SELECT team_id FROM teams WHERE name LIKE 'Kentucky Wildcats%')
+  AND attendance IS NOT NULL",,[[19927.88888888889]]
+improved_v2_dev,A09,dev,aggregate,1,correct,,,2142,53,0.002407,816,4579,"SELECT COUNT(*)
+FROM games
+WHERE game_type = 'ncaa_tournament'
+  AND season BETWEEN 2021 AND 2026
+  AND ABS(margin) <= 3",,[[60]]
+improved_v2_dev,J01,dev,join,1,correct,,,2128,218,0.003218,1367,6801,"SELECT DISTINCT 
+  CASE 
+    WHEN g.home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') 
+    THEN g.away_name
+    ELSE g.home_name
+  END AS team_name
+FROM games g
+WHERE g.season = 2025
+  AND (g.home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') 
+       OR g.away_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%'))
+  AND ((g.home_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') AND g.margin < 0)
+       OR (g.away_id = (SELECT team_id FROM teams WHERE name LIKE 'Duke Blue Devils%') AND g.margin > 0))
+ORDER BY team_name",,"[[""Clemson Tigers""], [""Houston Cougars""], [""Kansas Jayhawks""], [""Kentucky Wildcats""]]"
+improved_v2_dev,J02,dev,join,1,correct,,,2130,287,0.003565,1482,1941,"SELECT DISTINCT 
+  CASE WHEN g.home_id = ts.team_id THEN g.home_name ELSE g.away_name END AS team_name,
+  ts.conference
+FROM games g
+JOIN team_seasons ts ON ts.season = g.season AND (ts.team_id = g.home_id OR ts.team_id = g.away_id)
+WHERE g.season = 2025
+  AND g.game_type = 'ncaa_tournament'
+  AND g.tourney_round = 'Final Four'",,"[[""Duke Blue Devils"", ""ACC""], [""Houston Cougars"", ""Big 12""], [""Auburn Tigers"", ""SEC""], [""Florida Gators"", ""SEC""]]"
+improved_v2_dev,J03,dev,join,1,correct,,,2135,185,0.00306,1189,3974,"SELECT COUNT(*) AS wins
+FROM games g
+JOIN team_seasons ts_home ON ts_home.season = g.season AND ts_home.team_id = g.home_id
+JOIN team_seasons ts_away ON ts_away.season = g.season AND ts_away.team_id = g.away_id
+WHERE g.season = 2024
+  AND g.home_d1 = 1
+  AND g.away_d1 = 1
+  AND ((ts_home.conference = 'Big Ten' AND ts_away.conference = 'SEC' AND g.margin > 0)
+    OR (ts_home.conference = 'SEC' AND ts_away.conference = 'Big Ten' AND g.margin < 0))",,[[6]]
+improved_v2_dev,J05,dev,join,1,correct,,,2143,202,0.003153,1353,6176,"SELECT SUM(CASE WHEN tg.win = 1 THEN 1 ELSE 0 END) AS wins,
+       SUM(CASE WHEN tg.win = 0 THEN 1 ELSE 0 END) AS losses
+FROM team_games tg
+JOIN team_seasons ts_opp ON ts_opp.season = tg.season 
+  AND ts_opp.team_id = tg.opp_id
+WHERE tg.season = 2026
+  AND tg.team_id = (SELECT team_id FROM teams WHERE name LIKE 'Iowa State Cyclones%')
+  AND ts_opp.rating_rank <= 25",,"[[6, 6]]"
+improved_v2_dev,J08,dev,join,1,correct,,,2142,153,0.002907,1255,1636,"SELECT AVG(tg.opp_pts) AS points_allowed_per_game
+FROM team_games tg
+JOIN team_seasons ts ON ts.season = tg.season AND ts.team_id = tg.team_id
+WHERE tg.season = 2024  -- 2023-24
+  AND tg.team_id = (SELECT team_id FROM teams WHERE name LIKE 'Kansas Jayhawks%')
+  AND tg.opp_id IN (
+    SELECT team_id FROM team_seasons
+    WHERE season = 2024 AND conference = 'Big 12'
+  )",,[[71.0]]
+improved_v2_dev,C02,dev,comparison,1,correct,,,2136,62,0.002446,877,1182,"SELECT name, ppg
+FROM team_seasons
+WHERE season = 2023
+  AND (name LIKE 'Alabama Crimson Tide%' OR name LIKE 'Gonzaga Bulldogs%')
+ORDER BY ppg DESC",,"[[""Gonzaga Bulldogs"", 86.1], [""Alabama Crimson Tide"", 81.8]]"
+improved_v2_dev,C03,dev,comparison,1,correct,,,2147,200,0.003147,1386,1606,"SELECT COUNT(*) AS games_played, SUM(CASE WHEN g.home_id = d.team_id AND g.margin > 0 THEN 1 WHEN g.away_id = d.team_id AND g.margin < 0 THEN 1 ELSE 0 END) AS duke_wins
+FROM games g
+JOIN teams d ON d.name LIKE 'Duke Blue Devils%'
+JOIN teams unc ON unc.name LIKE 'North Carolina Tar Heels%'
+WHERE (g.home_id = d.team_id AND g.away_id = unc.team_id) OR (g.home_id = unc.team_id AND g.away_id = d.team_id)
+  AND g.season BETWEEN 2020 AND 2026",,"[[16, 9]]"
+improved_v2_dev,C04,dev,comparison,1,correct,,,2140,186,0.00307,1414,1808,"SELECT name, tempo
+FROM team_seasons
+WHERE season = 2026 AND rating_rank <= 10
+ORDER BY tempo ASC
+LIMIT 1",,"[[""Houston Cougars"", 64.8]]"
+improved_v2_dev,C07,dev,comparison,1,correct,,,2133,47,0.002368,858,1085,"SELECT name, conf_wins
+FROM team_seasons
+WHERE season = 2026 AND conference = 'Big Ten'
+ORDER BY conf_wins DESC
+LIMIT 1",,"[[""Michigan Wolverines"", 19]]"
+improved_v2_dev,C08,dev,comparison,1,correct,,,2138,125,0.002763,966,1982,"SELECT 
+  ts1.name,
+  ts1.rating,
+  ts2.name,
+  ts2.rating,
+  ABS(ts1.rating - ts2.rating) AS gap
+FROM team_seasons ts1
+JOIN team_seasons ts2 ON ts1.season = ts2.season
+WHERE ts1.season = 2026
+  AND ts1.name LIKE 'Michigan Wolverines%'
+  AND ts2.name LIKE 'Michigan State Spartans%'",,"[[""Michigan Wolverines"", 28.81, ""Michigan State Spartans"", 20.06, 8.75]]"
+improved_v2_dev,T01,dev,time_filter,1,correct,,,2131,31,0.002286,739,3588,"SELECT COUNT(*) AS games_played
+FROM games
+WHERE date = '2026-01-17'",,[[145]]
+improved_v2_dev,T03,dev,time_filter,1,correct,,,2128,46,0.002358,738,5365,"SELECT COUNT(*) AS games_in_november_2024
+FROM games
+WHERE date BETWEEN '2024-11-01' AND '2024-11-30'",,[[1533]]
+improved_v2_dev,T04,dev,time_filter,1,correct,,,2133,118,0.002723,1058,7277,"SELECT SUM(CASE WHEN win = 1 THEN 1 ELSE 0 END) AS wins,
+       SUM(CASE WHEN win = 0 THEN 1 ELSE 0 END) AS losses
+FROM team_games
+WHERE team_id = (SELECT team_id FROM teams WHERE name LIKE 'UConn Huskies%')
+  AND season = 2024
+  AND date < '2024-01-01'",,"[[11, 2]]"
+improved_v2_dev,T06,dev,time_filter,1,correct,,,2129,47,0.002364,849,1134,"SELECT COUNT(*)
+FROM games
+WHERE date BETWEEN '2022-12-01' AND '2022-12-31'
+  AND ot_periods > 0",,[[55]]
+improved_v2_dev,T07,dev,time_filter,1,correct,,,2135,22,0.002245,778,2929,"SELECT MIN(date) FROM games
+WHERE season = 2022",,"[[""2021-11-09""]]"
+improved_v2_dev,U01,dev,unanswerable,1,refused_correctly,,,2130,48,0.00237,972,4765,,,
+improved_v2_dev,U04,dev,unanswerable,1,refused_correctly,,,2129,45,0.002354,836,6448,,,
+improved_v2_dev,U05,dev,unanswerable,1,refused_correctly,,,2130,41,0.002335,1019,1404,,,
+improved_v2_dev,U06,dev,unanswerable,1,refused_correctly,,,2137,36,0.002317,1259,3503,,,
