@@ -1,0 +1,11 @@
+session,agent,edit_tool_calls,distinct_repo_files,scratch_files,files_outside_brief,outside_files
+1. Season rebuild,docs-agent,25,13,0,0,
+1. Season rebuild,march-agent,12,5,0,0,
+1. Season rebuild,odds-agent,13,5,2,0,
+2. Portfolio build,ask,27,9,11,0,
+2. Portfolio build,eng,8,6,0,0,
+2. Portfolio build,forecast,12,9,1,0,
+2. Portfolio build,hca,14,4,0,0,
+2. Portfolio build,march,8,5,0,0,
+2. Portfolio build,roster,2,2,0,0,
+2. Portfolio build,style,2,2,0,0,
