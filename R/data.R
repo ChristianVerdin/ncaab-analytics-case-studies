@@ -22,19 +22,23 @@ cs_root <- function() {
   file.path(dir, sprintf("%s_%d.rds", kind, season))
 }
 
-.cached <- function(kind, season, build) {
+# refresh = TRUE rebuilds the cache (use it for the season in progress). Writes are atomic (temp file + rename),
+# so a reader in another process never sees a half-written file.
+.cached <- function(kind, season, build, refresh = FALSE) {
   path <- .cache_path(kind, season)
-  if (file.exists(path)) return(readRDS(path))
+  if (!refresh && file.exists(path)) return(readRDS(path))
   out <- build()
-  saveRDS(out, path)
+  tmp <- paste0(path, ".tmp", Sys.getpid())
+  saveRDS(out, tmp)
+  file.rename(tmp, path)
   out
 }
 
 .num <- function(x) suppressWarnings(as.numeric(x))
 
 #' Completed games for the given seasons, one row per game.
-cbb_games <- function(seasons) {
-  bind_rows(lapply(seasons, function(s) .cached("games", s, function() {
+cbb_games <- function(seasons, refresh = FALSE) {
+  bind_rows(lapply(seasons, function(s) .cached("games", s, refresh = refresh, build = function() {
     x <- load_mbb_schedule(seasons = s)
     for (col in c("status_period", "venue_id", "tournament_id", "notes_headline", "attendance")) {
       if (!col %in% names(x)) x[[col]] <- NA   # older seasons lack some ESPN fields
@@ -69,8 +73,8 @@ cbb_games <- function(seasons) {
 }
 
 #' Team box scores, one row per team per game, with an estimated possession count.
-cbb_team_box <- function(seasons) {
-  bind_rows(lapply(seasons, function(s) .cached("team_box", s, function() {
+cbb_team_box <- function(seasons, refresh = FALSE) {
+  bind_rows(lapply(seasons, function(s) .cached("team_box", s, refresh = refresh, build = function() {
     load_mbb_team_box(seasons = s) %>%
       transmute(
         season = as.integer(s),
@@ -93,8 +97,8 @@ cbb_team_box <- function(seasons) {
 }
 
 #' Player minutes, one row per player per game played.
-cbb_player_box <- function(seasons) {
-  bind_rows(lapply(seasons, function(s) .cached("player_box", s, function() {
+cbb_player_box <- function(seasons, refresh = FALSE) {
+  bind_rows(lapply(seasons, function(s) .cached("player_box", s, refresh = refresh, build = function() {
     p <- load_mbb_player_box(seasons = s)
     if ("did_not_play" %in% names(p)) p <- p %>% filter(!coalesce(as.logical(did_not_play), FALSE))
     p %>%
