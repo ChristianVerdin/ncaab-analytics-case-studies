@@ -1,0 +1,5 @@
+row,kind,n,est,se,lo,hi
+Penalty as designed,Assumed,149,-1.1476510067114094,NA,NA,NA
+Penalty as applied (sign reversed),Assumed,149,1.1476510067114094,NA,NA,NA
+Measured: 2+ games in the prior 4 days (the penalty's own trigger),Measured,149,0.670286394213087,0.857520026093316,-0.9446050410956714,2.284562995634621
+"Measured: played yesterday, opponent did not",Measured,414,-1.534294482119807,0.5525295284391818,-2.593937348014568,-0.4317535443347175

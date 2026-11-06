@@ -1,0 +1,5 @@
+rule,seasons,share_of_seasons_with_a_false_alarm,false_alarms_per_season,firings_2025_26,confirmed,rule_label,monitored_weeks
+A1_gap_threshold,300,0,0,0,0,"A1  Weekly Brier gap to KenPom above 0.005, two weeks running",20
+A2_gap_significant,300,0.21,0.4166666666666667,0,0,A2  Four-week Brier gap to KenPom above zero (95%),20
+A3_calibration,300,0.05333333333333334,0.05666666666666668,0,0,"A3  Forecast vs observed home wins off by 2+ SE, two weeks running",20
+A4_margin_scale,300,0.01,0.009999999999999993,5,3,"A4  Margin slope differs from 1 by 2+ SE, two weeks running",20

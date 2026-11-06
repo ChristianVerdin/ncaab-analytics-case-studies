@@ -1,0 +1,141 @@
+model,rule,week,week_start,state
+"v2.2, the current model (replay)",A1_gap_threshold,1,2025-11-03,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,1,2025-11-03,Did not fire
+"v2.2, the current model (replay)",A3_calibration,1,2025-11-03,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,1,2025-11-03,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,2,2025-11-10,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,2,2025-11-10,Did not fire
+"v2.2, the current model (replay)",A3_calibration,2,2025-11-10,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,2,2025-11-10,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,3,2025-11-17,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,3,2025-11-17,Did not fire
+"v2.2, the current model (replay)",A3_calibration,3,2025-11-17,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,3,2025-11-17,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,4,2025-11-24,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,4,2025-11-24,Did not fire
+"v2.2, the current model (replay)",A3_calibration,4,2025-11-24,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,4,2025-11-24,"Fired, confirmed by the next 4 weeks"
+"v2.2, the current model (replay)",A1_gap_threshold,5,2025-12-01,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,5,2025-12-01,Did not fire
+"v2.2, the current model (replay)",A3_calibration,5,2025-12-01,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,5,2025-12-01,"Fired, confirmed by the next 4 weeks"
+"v2.2, the current model (replay)",A1_gap_threshold,6,2025-12-08,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,6,2025-12-08,Did not fire
+"v2.2, the current model (replay)",A3_calibration,6,2025-12-08,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,6,2025-12-08,"Fired, confirmed by the next 4 weeks"
+"v2.2, the current model (replay)",A1_gap_threshold,7,2025-12-15,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,7,2025-12-15,Did not fire
+"v2.2, the current model (replay)",A3_calibration,7,2025-12-15,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,7,2025-12-15,"Fired, not confirmed"
+"v2.2, the current model (replay)",A1_gap_threshold,8,2025-12-22,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,8,2025-12-22,Did not fire
+"v2.2, the current model (replay)",A3_calibration,8,2025-12-22,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,8,2025-12-22,"Fired, not confirmed"
+"v2.2, the current model (replay)",A1_gap_threshold,9,2025-12-29,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,9,2025-12-29,Did not fire
+"v2.2, the current model (replay)",A3_calibration,9,2025-12-29,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,9,2025-12-29,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,10,2026-01-05,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,10,2026-01-05,Did not fire
+"v2.2, the current model (replay)",A3_calibration,10,2026-01-05,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,10,2026-01-05,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,11,2026-01-12,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,11,2026-01-12,Did not fire
+"v2.2, the current model (replay)",A3_calibration,11,2026-01-12,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,11,2026-01-12,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,12,2026-01-19,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,12,2026-01-19,Did not fire
+"v2.2, the current model (replay)",A3_calibration,12,2026-01-19,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,12,2026-01-19,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,13,2026-01-26,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,13,2026-01-26,Did not fire
+"v2.2, the current model (replay)",A3_calibration,13,2026-01-26,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,13,2026-01-26,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,14,2026-02-02,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,14,2026-02-02,Did not fire
+"v2.2, the current model (replay)",A3_calibration,14,2026-02-02,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,14,2026-02-02,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,15,2026-02-09,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,15,2026-02-09,Did not fire
+"v2.2, the current model (replay)",A3_calibration,15,2026-02-09,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,15,2026-02-09,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,16,2026-02-16,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,16,2026-02-16,Did not fire
+"v2.2, the current model (replay)",A3_calibration,16,2026-02-16,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,16,2026-02-16,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,17,2026-02-23,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,17,2026-02-23,Did not fire
+"v2.2, the current model (replay)",A3_calibration,17,2026-02-23,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,17,2026-02-23,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,18,2026-03-02,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,18,2026-03-02,Did not fire
+"v2.2, the current model (replay)",A3_calibration,18,2026-03-02,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,18,2026-03-02,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,19,2026-03-09,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,19,2026-03-09,Did not fire
+"v2.2, the current model (replay)",A3_calibration,19,2026-03-09,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,19,2026-03-09,Did not fire
+"v2.2, the current model (replay)",A1_gap_threshold,20,2026-03-16,Did not fire
+"v2.2, the current model (replay)",A2_gap_significant,20,2026-03-16,Did not fire
+"v2.2, the current model (replay)",A3_calibration,20,2026-03-16,Did not fire
+"v2.2, the current model (replay)",A4_margin_scale,20,2026-03-16,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,1,2025-11-03,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,1,2025-11-03,Did not fire
+"v2.1, last season's model (known calibration defect)",A3_calibration,1,2025-11-03,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,2,2025-11-10,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,2,2025-11-10,Did not fire
+"v2.1, last season's model (known calibration defect)",A3_calibration,2,2025-11-10,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,3,2025-11-17,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,3,2025-11-17,Did not fire
+"v2.1, last season's model (known calibration defect)",A3_calibration,3,2025-11-17,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,4,2025-11-24,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,4,2025-11-24,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,4,2025-11-24,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,5,2025-12-01,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,5,2025-12-01,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,5,2025-12-01,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,6,2025-12-08,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,6,2025-12-08,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,6,2025-12-08,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,7,2025-12-15,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,7,2025-12-15,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,7,2025-12-15,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,8,2025-12-22,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,8,2025-12-22,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,8,2025-12-22,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,9,2025-12-29,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,9,2025-12-29,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,9,2025-12-29,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,10,2026-01-05,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,10,2026-01-05,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,10,2026-01-05,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,11,2026-01-12,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,11,2026-01-12,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,11,2026-01-12,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,12,2026-01-19,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,12,2026-01-19,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,12,2026-01-19,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,13,2026-01-26,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,13,2026-01-26,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,13,2026-01-26,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,14,2026-02-02,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,14,2026-02-02,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,14,2026-02-02,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,15,2026-02-09,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,15,2026-02-09,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,15,2026-02-09,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,16,2026-02-16,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,16,2026-02-16,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A3_calibration,16,2026-02-16,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,17,2026-02-23,"Fired, not confirmed"
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,17,2026-02-23,"Fired, not confirmed"
+"v2.1, last season's model (known calibration defect)",A3_calibration,17,2026-02-23,"Fired, confirmed by the next 4 weeks"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,18,2026-03-02,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,18,2026-03-02,"Fired, not confirmed"
+"v2.1, last season's model (known calibration defect)",A3_calibration,18,2026-03-02,"Fired, not confirmed"
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,19,2026-03-09,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,19,2026-03-09,"Fired, too late in the season to check"
+"v2.1, last season's model (known calibration defect)",A3_calibration,19,2026-03-09,Did not fire
+"v2.1, last season's model (known calibration defect)",A1_gap_threshold,20,2026-03-16,Did not fire
+"v2.1, last season's model (known calibration defect)",A2_gap_significant,20,2026-03-16,"Fired, too late in the season to check"
+"v2.1, last season's model (known calibration defect)",A3_calibration,20,2026-03-16,Did not fire
