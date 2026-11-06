@@ -1,0 +1,16 @@
+stat,value
+added_title_prob_exact,2.875596207754829e-4
+added_title_prob_march_sigma,5.875025952005452e-4
+added_title_prob_boot_p05,9.191695991987841e-5
+added_title_prob_boot_p95,0.00260757082220357
+added_title_prob_slot_min,2.420497729330809e-4
+added_title_prob_slot_max,3.472629626728527e-4
+added_sweet16_expected,0.38236739896618377
+added_final_four_expected,0.012860845279267064
+extra_rating_upsets,3.6150499999999823
+extra_rating_upsets_se,0.014035463233868579
+extra_seed_upsets,0.3227899999999906
+extra_seed_upsets_se,0.013453490309322195
+mc_max_abs_error_title_prob,0.001874768684249406
+sigma,10.547698929578305
+hca,3.0065756770573846
