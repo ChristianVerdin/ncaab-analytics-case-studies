@@ -184,7 +184,7 @@ res(persist_era, "persistence_by_era.csv")
 
 # ---- 6. Sorting: do players move between teams of similar strength? ----
 # Each incoming D1 transfer: receiving team's rating last season vs the old team's rating in the season he played
-# there, weighted by his share of the old team's minutes.
+# there, weighted by the player's share of the old team's minutes.
 moves <- cls %>% filter(grepl("transfer", origin)) %>%
   mutate(imm = origin == "D1 transfer, immediate", old = ifelse(imm, old1, old2), oshare = ifelse(imm, oshare1, oshare2),
          oseason = ifelse(imm, season - 1L, season - 2L)) %>%
